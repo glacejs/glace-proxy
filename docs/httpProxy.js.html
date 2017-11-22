@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>GlaseJS Proxy Source: httpProxy.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cosmo.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">GlaseJS Proxy</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-config-config.html">config~config</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-baseProxy.html">baseProxy</a></li><li><a href="module-cli.html">cli</a></li><li><a href="module-commands.html">commands</a></li><li><a href="module-config.html">config</a></li><li><a href="module-globalProxy.html">globalProxy</a></li><li><a href="module-help.html">help</a></li><li><a href="module-httpProxy.html">httpProxy</a></li><li><a href="module-index.html">index</a></li><li><a href="module-interactive.html">interactive</a></li><li><a href="module-logger.html">logger</a></li><li><a href="module-middleware_cache.html">middleware/cache</a></li><li><a href="module-middleware_index.html">middleware/index</a></li><li><a href="module-middleware_info.html">middleware/info</a></li><li><a href="module-middleware_reqBody.html">middleware/reqBody</a></li><li><a href="module-middleware_resHeaders.html">middleware/resHeaders</a></li><li><a href="module-middleware_speed.html">middleware/speed</a></li><li><a href="module-steps.html">steps</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-baseProxy-BaseProxy.html">baseProxy~BaseProxy</a></li><li><a href="module-commands-Commands.html">commands~Commands</a></li><li><a href="module-globalProxy-GlobalProxy.html">globalProxy~GlobalProxy</a></li><li><a href="module-httpProxy-HttpProxy.html">httpProxy~HttpProxy</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: httpProxy.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">"use strict";
+/**
+ * Http Proxy classes and functions.
+ *
+ * @module
+ */
+
+var fs = require("fs");
+var os = require("os");
+var http = require("http");
+var https = require("https");
+var url = require("url");
+var util = require("util");
+var path = require("path");
+
+require("colors");
+var _ = require("lodash");
+var expect = require("chai").expect;
+var express = require("express");
+var httpProxy = require("http-proxy");
+var U = require("glacejs-utils");
+
+var CONF = require("./config");
+var BaseProxy = require("./baseProxy");
+var cache = require("./middleware/cache");
+var middleware = require("./middleware");
+/**
+ * Http Proxy.
+ *
+ * @class
+ * @arg {object} opts - Proxy options.
+ * @arg {string} opts.url - URL which should be proxied.
+ *  them from cache.
+ */
+var HttpProxy = module.exports = function (opts) {
+
+    BaseProxy.call(this, opts);
+
+    this._initUrl = opts.url;
+    this._url = null;
+    this._server = null;
+    this._proxyOptions = {};
+
+    this._proxy = httpProxy.createProxyServer();
+
+    this._proxy.on('proxyReq', (proxyReq, req, res, options) => {
+        if (req.body) proxyReq.end(req.body);
+    });
+
+    this._proxy.on("error", (err, req, res) => {
+        if (req._reconnect > 0 &amp;&amp; !req.socket.destroyed) {
+            logger.warn("Request reconnected", U.getReqKey(req));
+            req._reconnect--;
+            this._proxy.web(req, res);
+        } else {
+            logger.error(U.getReqKey(req), err);
+        };
+    });
+
+    this.updateOptions();
+
+    var app = express();
+    app.use(async (req, res) => {
+
+        this.req = req;
+        if (this.req._reconnect === undefined) {
+            this.req._reconnect = this._reconnect;
+        };
+        this.res = res;
+
+        for (var mw of middleware) if (await mw.call(this)) return;
+
+        delete this.req;
+        delete this.res;
+
+        this._proxy.web(req, res, this._proxyOptions);
+    });
+    this._server = http.createServer(app);
+};
+util.inherits(HttpProxy, BaseProxy);
+/**
+ * Update proxy options.
+ *
+ * @method
+ * @arg {string} targetUrl - URL which should be proxied.
+ */
+HttpProxy.prototype.updateOptions = function (targetUrl) {
+    targetUrl = targetUrl || this._initUrl;
+
+    var parsedUrl = url.parse(targetUrl);
+
+    if (this._port) {
+        this._url = _.trimEnd(`http://${U.hostname}:${this._port}` +
+                              url.parse(targetUrl).pathname, "/");
+    };
+
+    expect(["http:", "https:"],
+           "Unsupported protocol").include(parsedUrl.protocol);
+
+    // FIXME work around bug in `node-http-proxy`
+    this._proxy.options = { proxyTimeout: this._timeout };
+
+    if (parsedUrl.protocol === "https:") {
+
+        this._proxyOptions = {
+            target: "https://" + parsedUrl.host,
+            agent: https.globalAgent,
+            headers: { host: parsedUrl.hostname },
+        };
+    } else {
+
+        this._proxyOptions = {
+            target: {
+                host: parsedUrl.hostname,
+                port: parsedUrl.port,
+            },
+        };
+    };
+};
+/**
+ * Starts proxy server if it’s not started yet.
+ *
+ * @method
+ */
+HttpProxy.prototype.start = function () {
+
+    return new Promise((resolve, reject) => {
+        this._server.listen(this._port, err => {
+            if (err) return reject(err);
+
+            this._port = this._server.address().port;
+            this._url = _.trimEnd(`http://${U.hostname}:${this._port}` +
+                                    url.parse(this._initUrl).pathname, "/");
+            this.isRunning = true;
+            resolve(this._url);
+        });
+    })
+    .then(() => cache.init())
+    .then(() => this._url);
+};
+/**
+ * Stops proxy server if it’s not stopped yet.
+ *
+ * @method
+ */
+HttpProxy.prototype.stop = function () {
+    if (!this.isRunning) return;
+    this._server.close();
+    this._proxy.close();
+    this.proxyUrl = null;
+    this.isRunning = false;
+};
+</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	Copyright 2017
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+	
+		on 2017-11-22T23:06:26+02:00
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>
