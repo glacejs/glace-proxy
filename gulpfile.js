@@ -10,9 +10,9 @@ var clean = require("gulp-clean");
 var spawn = require("cross-spawn");
 
 gulp.task("mk-docs", () => {
-    spawn.sync("jsdoc", [ "-c", "jsdoc.json", "-d", "public" ]);
+    spawn.sync("jsdoc", [ "-c", "jsdoc.json", "-d", "docs" ]);
 });
 
 gulp.task("rm-docs", () => {
-    gulp.src("public", {read: false}).pipe(clean());
+    gulp.src("docs", { read: false }).pipe(clean());
 });

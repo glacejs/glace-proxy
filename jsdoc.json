@@ -6,7 +6,7 @@
     },
     "plugins": ["plugins/markdown", "node_modules/jsdoc-strip-async-await"],
     "source": {
-        "include": [ "index.js" ]
+        "include": [ "lib" ]
     },
     "templates": {
         "theme": "cosmo",
