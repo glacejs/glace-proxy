@@ -65,14 +65,16 @@ glace-proxy
 **Configuration:**
 
 - `-c, --config [config-path]` - Path to JSON file with CLI arguments. Default is `cwd/config.json` (if it exists).
+- `--url <URL>` - Proxied URL for HTTP proxy. Required if HTTP proxy is used.
 
 (**Note!** All options below are may be used in `config.json`, see section **Quick Start**.)
 
 **Proxy:**
 
-- `--proxy-port [port-number]` - Port for http proxy. Default is random. For example: `--proxy-port 3000`.
+- `--http-proxy` - Activate HTTP proxy.
+- `--proxy-port [port-number]` - Port for HTTP proxy. Default is random. For example: `--proxy-port 3000`.
 - `--global-proxy` - Activate transparent global proxy.
-- `--global-proxy-port [port-number]` - Port for transparent global proxy. Default is `8888`. For example: `--global-proxy-port 3001`.
+- `--global-proxy-port [port-number]` - Port for transparent global proxy. Default is `8080`. For example: `--global-proxy-port 3001`.
 - `--install-certificate` - Install global proxy certificate as trusted. Requires administrator permissions. **Windows only!**
 - `--speed <value>` - Responses speed from proxy to client (browser), kb/s. Default is unlimited. For example: `--speed 128`.
 
