@@ -100,7 +100,79 @@
 
 
     <section class="readme-section">
-        <article><h1>GlaceJS Proxy</h1><h2>Annotation</h2></article>
+        <article><h1>GlaceJS Proxy</h1><h2>Annotation</h2><p><code>GlaceJS</code> proxy is nodejs interactive console application which launches http and global proxy to capture server responses and manage them.</p>
+<h2>Features</h2><ul>
+<li>HTTP proxy launching</li>
+<li>Global transparent proxy launching</li>
+<li>Responses caching</li>
+<li>Responses speed management</li>
+<li>Chrome browser launching</li>
+<li>Interactive management</li>
+<li>Development and testing API</li>
+</ul>
+<h2>Installation</h2><p>Be sure that you have installed <code>nodejs &gt;= v8.9</code>. Or <a href="https://nodejs.org/en/download/">download</a> and install it.</p>
+<pre class="prettyprint source"><code>npm i glacejs-proxy</code></pre><p>After installation utility <code>glace-proxy</code> will be available in terminal. Use <code>glace-proxy -h</code> to get details about its usage or see section <strong>Console Options</strong>.</p>
+<p>Installation for development:</p>
+<pre class="prettyprint source"><code>git clone https://github.com/schipiga/glacejs-proxy
+cd glacejs-proxy
+npm i</code></pre><h2>Quick Start</h2><p>To start proxy server call the command in terminal:</p>
+<pre class="prettyprint source"><code>glace-proxy [options]</code></pre><p>Or create file <code>config.json</code> and fill it with content:</p>
+<pre class="prettyprint source"><code>{
+    &quot;global-proxy&quot;: true or false,
+    &quot;global-proxy-port&quot;: &quot;&lt;port number>&quot;,
+    &quot;install-certificate&quot;: true,
+    &quot;existing-cache&quot;: true,
+    &quot;cache-folder&quot;: &quot;&lt;/path/to/cache/folder>&quot;,
+    &quot;url&quot;: &quot;&lt;URL>&quot;,
+    &quot;speed&quot;: 128
+}</code></pre><p>And then just execute command in terminal:</p>
+<pre class="prettyprint source"><code>glace-proxy</code></pre><h2>Console Options</h2><p><strong>Configuration:</strong></p>
+<ul>
+<li><code>-c, --config [config-path]</code> - Path to JSON file with CLI arguments. Default is <code>cwd/config.json</code> (if it exists).</li>
+</ul>
+<p>(<strong>Note!</strong> All options below are may be used in <code>config.json</code>, see section <strong>Quick Start</strong>.)</p>
+<p><strong>Proxy:</strong></p>
+<ul>
+<li><code>--proxy-port [port-number]</code> - Port for http proxy. Default is random. For example: <code>--proxy-port 3000</code>.</li>
+<li><code>--global-proxy</code> - Activate transparent global proxy.</li>
+<li><code>--global-proxy-port [port-number]</code> - Port for transparent global proxy. Default is <code>8888</code>. For example: <code>--global-proxy-port 3001</code>.</li>
+<li><code>--install-certificate</code> - Install global proxy certificate as trusted. Requires administrator permissions. <strong>Windows only!</strong></li>
+<li><code>--speed &lt;value&gt;</code> - Responses speed from proxy to client (browser), kb/s. Default is unlimited. For example: <code>--speed 128</code>.</li>
+</ul>
+<p><strong>Cache:</strong></p>
+<ul>
+<li><code>--cache</code> - Cache server responses to disk.</li>
+<li><code>--existing-cache</code> - Cache server responses to disk. Connect to existing cache if it exists.</li>
+<li><code>--cache-folder [folder-path]</code> - Folder to cache server responses. Default is <code>cwd/.proxy-cache</code>. For example: <code>--cache-folder /path/to/my/cache</code>.</li>
+</ul>
+<p><strong>Chrome:</strong></p>
+<ul>
+<li><code>--chrome</code> - Launch google chrome and open proxied URL there. Pristine profile will be used.</li>
+<li><code>--chrome-incognito</code> - Launch google chrome in incognito mode.</li>
+</ul>
+<p><strong>Log:</strong></p>
+<ul>
+<li><code>--log [file-path]</code> - Path to log file. Default is <code>cwd/glace-proxy.log</code>. For example: <code>--log /path/to/glace-proxy/log</code>.</li>
+<li><code>--stdout-log</code> - Print log messages to stdout.</li>
+</ul>
+<p><strong>Other:</strong></p>
+<ul>
+<li><code>-h, --help</code> - Show help.</li>
+</ul>
+<h2>GlaceJS proxy commands</h2><p>Commands will be available after <code>glace-proxy</code> launching:</p>
+<ul>
+<li><code>help [command...]</code> - Provides help for a given command.</li>
+<li><code>exit</code> - Exits application.</li>
+<li><code>chrome</code> - Launch google chrome browser. Pristine profile will be used each time.</li>
+<li><code>chrome close</code> - Close google chrome browser.</li>
+<li><code>chrome restart</code> - Restart google chrome browser. Pristine profile will be used each time.</li>
+<li><code>proxy speed &lt;speed&gt;</code> - Limit proxy speed, <strong>kb/s</strong>.</li>
+<li><code>proxy speed reset</code> - Unlimit proxy speed.</li>
+<li><code>cache</code> - Cache server responses to disk. Cached responses will be replayed by proxy.</li>
+<li><code>cache disable</code> - Disable proxy cache.</li>
+<li><code>cache clear</code> - Remove cached responses from storage.</li>
+</ul>
+<h2>Development API</h2><pre class="prettyprint source lang-javascript"><code>var glaceProxy = require(&quot;glacejs-proxy&quot;);</code></pre><p>More details about development and testing API <a href="module-index.html">here</a>.</p></article>
     </section>
 
 
@@ -150,7 +222,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2017-11-22T23:06:26+02:00
+		on 2017-11-23T14:19:19+02:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

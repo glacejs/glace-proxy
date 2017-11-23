@@ -91,6 +91,8 @@
  * @module
  */
 
+var url = require("url");
+
 var _ = require("lodash");
 var expect = require("chai").expect;
 var U = require("glacejs-utils");
@@ -142,21 +144,22 @@ module.exports = {
         var port = U.defVal(opts.port, this._config.proxy.port);
         var check = U.defVal(opts.check, true);
 
-        this._proxy = new HttpProxy({ url: appUrl,
+        this._httpProxy = new HttpProxy({ url: appUrl,
                                       useCache: useCache,
                                       timeout: timeout,
                                       reconnect: reconnect,
                                       port: port });
-        await this._proxy.start();
+        await this._httpProxy.start();
 
         if (check) {
-            expect(this._proxy.isRunning,
+            expect(this._httpProxy.isRunning,
                    "Proxy was not launched").be.true;
         };
         this._isProxyStarted = true;
 
-        this._appUrl = this._proxy.proxyUrl;
-        return this._proxy.proxyUrl;
+        this._appUrl = _.trim(
+            this._httpProxy.url + url.parse(this._config.appUrl).pathname, "/");
+        return this._appUrl;
     },
     /**
      * Step to get proxy URL.
@@ -173,11 +176,11 @@ module.exports = {
         var check = U.defVal(opts.check, true);
 
         if (check) {
-            expect(this._proxy.proxyUrl,
+            expect(this._httpProxy.url,
                    "Proxy was not launched").to.exist;
         };
 
-        return this._proxy.proxyUrl;
+        return this._httpProxy.url;
     },
     /**
      * Step to stop proxy. Step call will be skipped if proxy wasn't launched
@@ -201,10 +204,10 @@ module.exports = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
-        await this._proxy.stop();
+        await this._httpProxy.stop();
 
         if (check) {
-            expect(this._proxy.isRunning,
+            expect(this._httpProxy.isRunning,
                    "Proxy wasn't stopped").be.false;
         };
 
@@ -310,16 +313,16 @@ module.exports = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
-        if (this._proxy) {
-            this._proxy.setSpeed(speed);
+        if (this._httpProxy) {
+            this._httpProxy.setSpeed(speed);
         };
         if (this._globalProxy) {
             this._globalProxy.setSpeed(speed);
         };
 
         if (check) {
-            if (this._proxy) {
-                expect(this._proxy.speed,
+            if (this._httpProxy) {
+                expect(this._httpProxy.speed,
                        "Proxy speed is not limited").be.equal(speed);
             };
             if (this._globalProxy) {
@@ -345,16 +348,16 @@ module.exports = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
-        if (this._proxy) {
-            this._proxy.resetSpeed();
+        if (this._httpProxy) {
+            this._httpProxy.resetSpeed();
         };
         if (this._globalProxy) {
             this._globalProxy.resetSpeed();
         };
 
         if (check) {
-            if (this._proxy) {
-                expect(this._proxy.speed,
+            if (this._httpProxy) {
+                expect(this._httpProxy.speed,
                        "Proxy speed still has limited value").be.null;
             };
             if (this._globalProxy) {
@@ -380,16 +383,16 @@ module.exports = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
-        if (this._proxy) {
-            this._proxy.measureResponses();
+        if (this._httpProxy) {
+            this._httpProxy.measureResponses();
         };
         if (this._globalProxy) {
             this._globalProxy.measureResponses();
         };
 
         if (check) {
-            if (this._proxy) {
-                expect(this._proxy.getResponsesData(),
+            if (this._httpProxy) {
+                expect(this._httpProxy.getResponsesData(),
                        "Proxy responses measurement is not launched")
                     .to.exist;
             };
@@ -419,8 +422,8 @@ module.exports = {
 
         var data = [];
 
-        if (this._proxy &amp;&amp; this._proxy.getResponsesData()) {
-            data = data.concat(this._proxy.getResponsesData());
+        if (this._httpProxy &amp;&amp; this._httpProxy.getResponsesData()) {
+            data = data.concat(this._httpProxy.getResponsesData());
         };
         if (this._globalProxy &amp;&amp; this._globalProxy.getResponsesData()) {
             data = data.concat(this._globalProxy.getResponsesData());
@@ -450,16 +453,16 @@ module.exports = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
-        if (this._proxy) {
-            this._proxy.unmeasureResponses();
+        if (this._httpProxy) {
+            this._httpProxy.unmeasureResponses();
         };
         if (this._globalProxy) {
             this._globalProxy.unmeasureResponses();
         };
 
         if (check) {
-            if (this._proxy) {
-                expect(this._proxy.getResponsesData(),
+            if (this._httpProxy) {
+                expect(this._httpProxy.getResponsesData(),
                        "Proxy responses measurement is still running")
                     .to.be.null;
             };
@@ -478,7 +481,7 @@ module.exports = {
      */
     enableCache: function () {
         this._checkProxy();
-        if (this._proxy) this._proxy.useCache = true;
+        if (this._httpProxy) this._httpProxy.useCache = true;
         if (this._globalProxy) this._globalProxy.useCache = true;
     },
     /**
@@ -489,7 +492,7 @@ module.exports = {
      */
     disableCache: function () {
         this._checkProxy();
-        if (this._proxy) this._proxy.useCache = false;
+        if (this._httpProxy) this._httpProxy.useCache = false;
         if (this._globalProxy) this._globalProxy.useCache = false;
     },
     /**
@@ -501,7 +504,7 @@ module.exports = {
      * @throws {AssertionError} - If no proxy is launched.
      */
     _checkProxy: function () {
-        expect(this._proxy || this._globalProxy,
+        expect(this._httpProxy || this._globalProxy,
                "No proxy is launched").to.exist;
     },
 };
@@ -550,7 +553,7 @@ module.exports = {
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2017-11-22T23:06:26+02:00
+		on 2017-11-23T14:19:19+02:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

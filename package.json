@@ -1,7 +1,7 @@
 {
   "name": "glacejs-proxy",
-  "version": "1.0.3",
-  "description": "",
+  "version": "1.0.4",
+  "description": "GlaceJS proxy is interactive nodejs application to launch http and global proxy in order to capture server responses and manage them",
   "main": "lib/index.js",
   "scripts": {},
   "repository": {
