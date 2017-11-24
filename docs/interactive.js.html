@@ -108,6 +108,143 @@ var interactive = module.exports = (cmd, cli) => {
 
     cli = U.defVal(cli, vorpal);
 
+    cli.command("url &lt;url>")
+        .description(d("Set proxied URL."))
+        .action(function (args, cb) {
+
+            if (!args.url.toString().startsWith("http")) {
+                this.log("Invalid URL".red);
+                return cb();
+            };
+
+            return cmd
+                .setProxiedUrl(args.url)
+                .then(isOk => {
+                    if (!isOk) return;
+                    this.log(`Proxied URL changed to ${args.url}`.green);
+                })
+                .catch(e => this.log(e))
+                .then(cb);
+        });
+
+    cli.command("proxy start http")
+        .description(d("Start HTTP proxy."))
+        .action(function (args, cb) {
+
+            return cmd
+                .launchHttpProxy()
+                .then(isOk => {
+                    if (!isOk) return;
+                    this.log("HTTP proxy is launched".green);
+                })
+                .catch(e => this.log(e))
+                .then(cb);
+        });
+
+    cli.command("proxy start global")
+        .description(d("Start global proxy."))
+        .action(function (args, cb) {
+
+            return cmd
+                .launchGlobalProxy()
+                .then(isOk => {
+                    if (!isOk) return;
+                    this.log("Global proxy is launched".green);
+                })
+                .catch(e => this.log(e))
+                .then(cb);
+        });
+
+    cli.command("proxy stop http")
+        .description(d("Stop HTTP proxy."))
+        .action(function (args, cb) {
+
+            return cmd
+                .stopHttpProxy()
+                .then(isOk => {
+                    if (!isOk) return;
+                    this.log("HTTP proxy is stopped".green);
+                })
+                .catch(e => this.log(e))
+                .then(cb);
+        });
+
+    cli.command("proxy stop global")
+        .description(d("Stop global proxy."))
+        .action(function (args, cb) {
+
+            return cmd
+                .stopGlobalProxy()
+                .then(isOk => {
+                    if (!isOk) return;
+                    this.log("Global proxy is stopped".green);
+                })
+                .catch(e => this.log(e))
+                .then(cb);
+        });
+
+    cli.command("proxy restart http")
+        .description(d("Restart HTTP proxy."))
+        .action(function (args, cb) {
+
+            return cmd
+                .restartHttpProxy()
+                .then(isOk => {
+                    if (!isOk) return;
+                    this.log("HTTP proxy is restarted".green);
+                })
+                .catch(e => this.log(e))
+                .then(cb);
+        });
+
+    cli.command("proxy restart global")
+        .description(d("Restart global proxy."))
+        .action(function (args, cb) {
+
+            return cmd
+                .restartGlobalProxy()
+                .then(isOk => {
+                    if (!isOk) return;
+                    this.log("Global proxy is restarted".green);
+                })
+                .catch(e => this.log(e))
+                .then(cb);
+        });
+
+    cli.command("proxy speed &lt;speed>")
+        .description(d("Limit proxy speed, kb/s."))
+        .action(function (args, cb) {
+
+            if (!parseInt(args.speed)) {
+                this.log("Speed value should be a number".red);
+                return cb();
+            };
+
+            return cmd
+                .setProxySpeed(args.speed)
+                .then(isOk => {
+                    if (!isOk) return;
+                    this.log(
+                        `Proxy speed is limited to ${args.speed} kb/s`.green);
+                })
+                .catch(e => this.log(e))
+                .then(cb);
+        });
+
+    cli.command("proxy speed reset")
+        .description(d("Unlimit proxy speed."))
+        .action(function (args, cb) {
+
+            return cmd
+                .resetProxySpeed()
+                .then(isOk => {
+                    if (!isOk) return;
+                    this.log("Proxy speed is unlimited".green);
+                })
+                .catch(e => this.log(e))
+                .then(cb);
+        });
+
     cli.command("chrome")
         .description(d("Launch google chrome browser.",
                        "Pristine profile will be used each time."))
@@ -152,43 +289,9 @@ var interactive = module.exports = (cmd, cli) => {
                 .then(cb);
         });
 
-    cli.command("proxy speed &lt;speed>")
-        .description(d("Limit proxy speed, kb/s."))
-        .action(function (args, cb) {
-
-            if (!parseInt(args.speed)) {
-                this.log("Speed value should be a number".red);
-                return cb();
-            };
-
-            return cmd
-                .setProxySpeed(args.speed)
-                .then(isOk => {
-                    if (!isOk) return;
-                    this.log(
-                        `Proxy speed is limited to ${args.speed} kb/s`.green);
-                })
-                .catch(e => this.log(e))
-                .then(cb);
-        });
-
-    cli.command("proxy speed reset")
-        .description(d("Unlimit proxy speed."))
-        .action(function (args, cb) {
-
-            return cmd
-                .resetProxySpeed()
-                .then(isOk => {
-                    if (!isOk) return;
-                    this.log("Proxy speed is unlimited".green);
-                })
-                .catch(e => this.log(e))
-                .then(cb);
-        });
-
     cli.command("cache")
-        .description(d("Cache server responses to disk.\nCached responses",
-                       "will be replayed by proxy."))
+        .description(d("Cache server responses to disk.",
+                       "Cached responses will be replayed by proxy."))
         .action(function (args, cb) {
 
             return cmd
@@ -292,7 +395,7 @@ var interactive = module.exports = (cmd, cli) => {
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2017-11-23T23:09:26+02:00
+		on 2017-11-24T09:56:05+02:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

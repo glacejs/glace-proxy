@@ -102,13 +102,20 @@ glace-proxy
 
 Commands will be available after `glace-proxy` launching:
 
+- `url <url>` - Set proxied URL.
+- `proxy start http` - Start HTTP proxy.
+- `proxy start global` - Start global proxy.
+- `proxy stop http` - Stop HTTP proxy.
+- `proxy stop global` - Stop global proxy.
+- `proxy restart http` - Restart HTTP proxy.
+- `proxy restart global` - Restart global proxy.
 - `help [command...]` - Provides help for a given command.
 - `exit` - Exits application.
+- `proxy speed <speed>` - Limit proxy speed, **kb/s**.
+- `proxy speed reset` - Unlimit proxy speed.
 - `chrome` - Launch google chrome browser. Pristine profile will be used each time.
 - `chrome close` - Close google chrome browser.
 - `chrome restart` - Restart google chrome browser. Pristine profile will be used each time.
-- `proxy speed <speed>` - Limit proxy speed, **kb/s**.
-- `proxy speed reset` - Unlimit proxy speed.
 - `cache` - Cache server responses to disk. Cached responses will be replayed by proxy.
 - `cache disable` - Disable proxy cache.
 - `cache clear` - Remove cached responses from storage.
