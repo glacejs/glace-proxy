@@ -98,7 +98,7 @@ glace-proxy
 
 - `-h, --help` - Show help.
 
-## GlaceJS proxy commands
+## GlaceJS Proxy commands
 
 Commands will be available after `glace-proxy` launching:
 
@@ -109,8 +109,6 @@ Commands will be available after `glace-proxy` launching:
 - `proxy stop global` - Stop global proxy.
 - `proxy restart http` - Restart HTTP proxy.
 - `proxy restart global` - Restart global proxy.
-- `help [command...]` - Provides help for a given command.
-- `exit` - Exits application.
 - `proxy speed <speed>` - Limit proxy speed, **kb/s**.
 - `proxy speed reset` - Unlimit proxy speed.
 - `chrome` - Launch google chrome browser. Pristine profile will be used each time.
@@ -119,6 +117,8 @@ Commands will be available after `glace-proxy` launching:
 - `cache` - Cache server responses to disk. Cached responses will be replayed by proxy.
 - `cache disable` - Disable proxy cache.
 - `cache clear` - Remove cached responses from storage.
+- `help [command...]` - Provide help for a given command.
+- `exit` - Exit application.
 
 ## Development API
 
