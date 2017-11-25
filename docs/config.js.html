@@ -40,7 +40,7 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-baseProxy.html">baseProxy</a></li><li><a href="module-cli.html">cli</a></li><li><a href="module-commands.html">commands</a></li><li><a href="module-config.html">config</a></li><li><a href="module-globalProxy.html">globalProxy</a></li><li><a href="module-help.html">help</a></li><li><a href="module-httpProxy.html">httpProxy</a></li><li><a href="module-index.html">index</a></li><li><a href="module-interactive.html">interactive</a></li><li><a href="module-logger.html">logger</a></li><li><a href="module-middleware_cache.html">middleware/cache</a></li><li><a href="module-middleware_index.html">middleware/index</a></li><li><a href="module-middleware_info.html">middleware/info</a></li><li><a href="module-middleware_reqBody.html">middleware/reqBody</a></li><li><a href="module-middleware_resHeaders.html">middleware/resHeaders</a></li><li><a href="module-middleware_speed.html">middleware/speed</a></li><li><a href="module-steps.html">steps</a></li>
+					<li><a href="module-baseProxy.html">baseProxy</a></li><li><a href="module-cli.html">cli</a></li><li><a href="module-commands.html">commands</a></li><li><a href="module-config.html">config</a></li><li><a href="module-globalProxy.html">globalProxy</a></li><li><a href="module-help.html">help</a></li><li><a href="module-httpProxy.html">httpProxy</a></li><li><a href="module-index.html">index</a></li><li><a href="module-interactive.html">interactive</a></li><li><a href="module-middleware_cache.html">middleware/cache</a></li><li><a href="module-middleware_index.html">middleware/index</a></li><li><a href="module-middleware_info.html">middleware/info</a></li><li><a href="module-middleware_reqBody.html">middleware/reqBody</a></li><li><a href="module-middleware_resHead.html">middleware/resHead</a></li><li><a href="module-middleware_speed.html">middleware/speed</a></li><li><a href="module-steps.html">steps</a></li>
 				</ul>
 			</li>
 			
@@ -91,29 +91,10 @@
  * @module
  */
 
-var fs = require("fs");
 var path = require("path");
 
 var _ = require("lodash");
-var argv = require("yargs").argv;
-var expect = require("chai").expect;
-
-var cwd = process.cwd();
-
-/* Load CLI arguments from config */
-
-var argsConfig = {};
-var argsConfigPath = path.resolve(cwd, (argv.c || argv.config || "config.json"));
-
-if (fs.existsSync(argsConfigPath)) {
-    argsConfig = require(argsConfigPath);
-
-    for (var key in argsConfig) {
-        var val = argsConfig[key];
-        argsConfig[_.camelCase(key)] = val;
-    };
-};
-_.mergeWith(argsConfig, argv, (objVal, srcVal) => srcVal ? srcVal : objVal);
+var U = require("glacejs-utils");
 
 /* Set up default config */
 
@@ -146,7 +127,7 @@ _.mergeWith(argsConfig, argv, (objVal, srcVal) => srcVal ? srcVal : objVal);
  * @prop {number} [proxy.reconnect=2] - Number of reconnect attemptions if
  *  remote side breaks connection.
  */
-var config = module.exports = {
+var config = module.exports = _.merge(U.config, {
     cache: {
         ttl: Number.MAX_SAFE_INTEGER,
         size: 10 * 1024 * 1024 * 1024
@@ -159,28 +140,25 @@ var config = module.exports = {
     proxy: {
         timeout: 60000,
     },
-};
-
+});
+var args = config.args;
 /* Use CLI arguments */
-config.url = argsConfig.url;  // proxied URL
-config.proxy.http = !!argsConfig.httpProxy;  // default is `false`
-config.proxy.port = argsConfig.httpProxyPort || 0;  // default is random
-config.proxy.global = !!argsConfig.globalProxy;  //default `false`
-config.proxy.globalPort = argsConfig.globalProxyPort || 8080;
-config.proxy.shortPort = argsConfig.shortLinkPort || 0;  // default is random
-config.proxy.speed = argsConfig.speed;  // default unlimited
-config.proxy.installCertificate = !!argsConfig.installCertificate;  //default `false`
-config.proxy.reconnect = argsConfig.reconnect || 2;  // TODO maybe to make as CLI option
+config.url = args.url;  // proxied URL
+config.proxy.http = !!args.httpProxy;  // default is `false`
+config.proxy.port = args.httpProxyPort || 0;  // default is random
+config.proxy.global = !!args.globalProxy;  //default `false`
+config.proxy.globalPort = args.globalProxyPort || 8080;
+config.proxy.shortPort = args.shortLinkPort || 0;  // default is random
+config.proxy.speed = args.speed;  // default unlimited
+config.proxy.installCertificate = !!args.installCertificate;  //default `false`
+config.proxy.reconnect = args.reconnect || 2;  // TODO maybe to make as CLI option
 
-config.cache.use = !!argsConfig.cache || !!argsConfig.existingCache;  // default `false`
-config.cache.existing = !!argsConfig.existingCache;  // default `false`
-config.cache.folder = path.resolve(cwd, (argsConfig.cacheFolder || ".proxy-cache"));
+config.cache.use = !!args.cache || !!args.existingCache;  // default `false`
+config.cache.existing = !!args.existingCache;  // default `false`
+config.cache.folder = path.resolve(U.cwd, (args.cacheFolder || ".proxy-cache"));
 
-config.chrome.launch = !!argsConfig.chrome;  // default `false`
-config.chrome.incognito = !!argsConfig.chromeIncognito;  // default `false`
-
-config.log.path = path.resolve(cwd, (argsConfig.log || "glace-proxy.log"));
-config.log.stdout = !!argsConfig.stdoutLog;  // default `false`
+config.chrome.launch = !!args.chrome;  // default `false`
+config.chrome.incognito = !!args.chromeIncognito;  // default `false`
 </pre>
     </article>
 </section>
@@ -226,7 +204,7 @@ config.log.stdout = !!argsConfig.stdoutLog;  // default `false`
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2017-11-24T10:00:19+02:00
+		on 2017-11-25T22:39:04+02:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
