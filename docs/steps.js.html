@@ -33,21 +33,35 @@
 			<li class="dropdown">
 				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-config-config.html">config~config</a></li>
+					<li><a href="module-config-GlaceProxyConfig.html">config~GlaceProxyConfig</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-baseProxy.html">baseProxy</a></li><li><a href="module-cli.html">cli</a></li><li><a href="module-commands.html">commands</a></li><li><a href="module-config.html">config</a></li><li><a href="module-globalProxy.html">globalProxy</a></li><li><a href="module-help.html">help</a></li><li><a href="module-httpProxy.html">httpProxy</a></li><li><a href="module-index.html">index</a></li><li><a href="module-interactive.html">interactive</a></li><li><a href="module-middleware_cache.html">middleware/cache</a></li><li><a href="module-middleware_index.html">middleware/index</a></li><li><a href="module-middleware_info.html">middleware/info</a></li><li><a href="module-middleware_reqBody.html">middleware/reqBody</a></li><li><a href="module-middleware_resHead.html">middleware/resHead</a></li><li><a href="module-middleware_speed.html">middleware/speed</a></li><li><a href="module-steps.html">steps</a></li>
+					<li><a href="module-baseProxy.html">baseProxy</a></li><li><a href="module-cli.html">cli</a></li><li><a href="module-config.html">config</a></li><li><a href="module-help.html">help</a></li><li><a href="module-index.html">index</a></li><li><a href="module-middleware_cache.html">middleware/cache</a></li><li><a href="module-middleware_index.html">middleware/index</a></li><li><a href="module-middleware_info.html">middleware/info</a></li><li><a href="module-middleware_reqBody.html">middleware/reqBody</a></li><li><a href="module-middleware_resHead.html">middleware/resHead</a></li><li><a href="module-middleware_speed.html">middleware/speed</a></li><li><a href="module-steps.html">steps</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-baseProxy-BaseProxy.html">baseProxy~BaseProxy</a></li><li><a href="module-commands-Commands.html">commands~Commands</a></li><li><a href="module-globalProxy-GlobalProxy.html">globalProxy~GlobalProxy</a></li><li><a href="module-httpProxy-HttpProxy.html">httpProxy~HttpProxy</a></li>
+					<li><a href="Commands.html">Commands</a></li><li><a href="GlobalProxy.html">GlobalProxy</a></li><li><a href="HttpProxy.html">HttpProxy</a></li><li><a href="module-baseProxy-BaseProxy.html">baseProxy~BaseProxy</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="mixins.list.html" class="dropdown-toggle" data-toggle="dropdown">Mixins<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-steps-ProxySteps.html">steps~ProxySteps</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#_onError">_onError</a></li><li><a href="global.html#interactive">interactive</a></li>
 				</ul>
 			</li>
 			
@@ -104,7 +118,7 @@ var LOG = U.logger;
 /**
  * Steps to manage proxy.
  *
- *  @mixin
+ * @mixin ProxySteps
  */
 module.exports = {
     __GlobalProxy: GlobalProxy,
@@ -186,6 +200,7 @@ module.exports = {
      * @arg {object} [opts] - Step options.
      * @arg {boolean} [opts.check=true] - Flag to check that proxy URL is
      *  defined.
+     * @return {string} - Proxy URL.
      * @throws {AssertionError} - If proxy URL isn't defined.
      */
     getProxyUrl: function (opts) {
@@ -203,12 +218,13 @@ module.exports = {
      * Step to stop proxy. Step call will be skipped if proxy wasn't launched
      *  before.
      *
+     * @async
      * @method
      * @instance
-     * @async
      * @arg {object} [opts] - Step options.
      * @arg {boolean} [opts.check=true] - Flag to check that proxy was
      *  stopped.
+     * @return {Promise&lt;void>}
      * @throws {AssertionError} - If proxy wasn't stopped.
      */
     stopProxy: async function (opts) {
@@ -235,9 +251,9 @@ module.exports = {
      * Step to start global proxy. Step recall will be skipped if global
      *  proxy wasn't stopped before.
      *
+     * @async
      * @method
      * @instance
-     * @async
      * @arg {object} [opts] - Step options.
      * @arg {boolean} [opts.useCache] - Flag to use proxy cache for
      *  responses. Default value will be requested from `config.useCache`
@@ -248,6 +264,7 @@ module.exports = {
      * @arg {number} [opts.port] - Proxy port. Default value will be
      *  requested from `config.globalProxyPort`.
      * @arg {boolean} [opts.check=true] - Flag to check that proxy was launched.
+     * @return {Promise&lt;void>}
      * @throws {AssertionError} - If global proxy was not launched.
      */
     startGlobalProxy: async function (opts) {
@@ -259,9 +276,9 @@ module.exports = {
 
         opts = U.defVal(opts, {});
         var useCache = U.defVal(opts.useCache, this._config.cache.use);
-        var timeout = U.defVal(opts.timeout, this._config.timeouts.proxy);
+        var timeout = U.defVal(opts.timeout, this._config.proxy.timeout);
         var reconnect = U.defVal(opts.reconnect, this._config.proxy.reconnect);
-        var port = U.defVal(opts.port, this._config.globalProxyPort);
+        var port = U.defVal(opts.port, this._config.proxy.globalPort);
         var check = U.defVal(opts.check, true);
 
         this._globalProxy = new this.__GlobalProxy({
@@ -269,7 +286,7 @@ module.exports = {
             timeout: timeout,
             reconnect: reconnect,
             port: port,
-            installCertificate: this._config.installCertificate });
+            installCertificate: this._config.proxy.installCertificate });
 
         await this._globalProxy.start();
 
@@ -285,12 +302,13 @@ module.exports = {
      * Step to stop global proxy. Step call will be skipped if global proxy
      *  wasn't launched before.
      *
+     * @async
      * @method
      * @instance
-     * @async
      * @arg {object} [opts] - Step options.
      * @arg {boolean} [opts.check=true] - Flag to check that global
      *  proxy was stopped.
+     * @return {Promise&lt;void>}
      * @throws {AssertionError} - If global proxy wasn't stopped.
      */
     stopGlobalProxy: async function (opts) {
@@ -570,7 +588,7 @@ module.exports = {
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2017-11-27T19:25:49+02:00
+		on 2017-11-28T22:23:07+02:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

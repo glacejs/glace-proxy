@@ -33,21 +33,35 @@
 			<li class="dropdown">
 				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-config-config.html">config~config</a></li>
+					<li><a href="module-config-GlaceProxyConfig.html">config~GlaceProxyConfig</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-baseProxy.html">baseProxy</a></li><li><a href="module-cli.html">cli</a></li><li><a href="module-commands.html">commands</a></li><li><a href="module-config.html">config</a></li><li><a href="module-globalProxy.html">globalProxy</a></li><li><a href="module-help.html">help</a></li><li><a href="module-httpProxy.html">httpProxy</a></li><li><a href="module-index.html">index</a></li><li><a href="module-interactive.html">interactive</a></li><li><a href="module-middleware_cache.html">middleware/cache</a></li><li><a href="module-middleware_index.html">middleware/index</a></li><li><a href="module-middleware_info.html">middleware/info</a></li><li><a href="module-middleware_reqBody.html">middleware/reqBody</a></li><li><a href="module-middleware_resHead.html">middleware/resHead</a></li><li><a href="module-middleware_speed.html">middleware/speed</a></li><li><a href="module-steps.html">steps</a></li>
+					<li><a href="module-baseProxy.html">baseProxy</a></li><li><a href="module-cli.html">cli</a></li><li><a href="module-config.html">config</a></li><li><a href="module-help.html">help</a></li><li><a href="module-index.html">index</a></li><li><a href="module-middleware_cache.html">middleware/cache</a></li><li><a href="module-middleware_index.html">middleware/index</a></li><li><a href="module-middleware_info.html">middleware/info</a></li><li><a href="module-middleware_reqBody.html">middleware/reqBody</a></li><li><a href="module-middleware_resHead.html">middleware/resHead</a></li><li><a href="module-middleware_speed.html">middleware/speed</a></li><li><a href="module-steps.html">steps</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-baseProxy-BaseProxy.html">baseProxy~BaseProxy</a></li><li><a href="module-commands-Commands.html">commands~Commands</a></li><li><a href="module-globalProxy-GlobalProxy.html">globalProxy~GlobalProxy</a></li><li><a href="module-httpProxy-HttpProxy.html">httpProxy~HttpProxy</a></li>
+					<li><a href="Commands.html">Commands</a></li><li><a href="GlobalProxy.html">GlobalProxy</a></li><li><a href="HttpProxy.html">HttpProxy</a></li><li><a href="module-baseProxy-BaseProxy.html">baseProxy~BaseProxy</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="mixins.list.html" class="dropdown-toggle" data-toggle="dropdown">Mixins<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-steps-ProxySteps.html">steps~ProxySteps</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#_onError">_onError</a></li><li><a href="global.html#interactive">interactive</a></li>
 				</ul>
 			</li>
 			
@@ -96,227 +110,6 @@
 
         
 <dl class="details">
-    
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    <dl>
-
-<table class="props table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>Commands</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p><a href="module-commands.html">Commands</a> module.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>config</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p><a href="module-config.html">config</a> module.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>GlobalProxy</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p><a href="module-globalProxy.html">GlobalProxy</a> module.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>HttpProxy</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p><a href="module-httpProxy.html">HttpProxy</a> module.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>interactive</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p><a href="module-interactive.html">interactive</a> module.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>middleware</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">array</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>middleware module.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>mw</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>middleware dictionary.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>Steps</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p><a href="module-steps.html">Steps</a> module.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-</dl>
-
     
 
 	
@@ -380,6 +173,472 @@
     
 
     
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<hr>
+<dt class="name" id="~Commands">
+    <h4 id="~Commands"><span class="type-signature">&lt;inner> </span>Commands<span class="type-signature"> :<a href="Commands.html">Commands</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Commands.html">Commands</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="index.js.html">index.js</a>,
+				 <a href="index.js.html#sunlight-1-line-21">line 21</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="~config">
+    <h4 id="~config"><span class="type-signature">&lt;inner> </span>config<span class="type-signature"> :GlaceProxyConfig</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">GlaceProxyConfig</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="index.js.html">index.js</a>,
+				 <a href="index.js.html#sunlight-1-line-30">line 30</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="~GlobalProxy">
+    <h4 id="~GlobalProxy"><span class="type-signature">&lt;inner> </span>GlobalProxy<span class="type-signature"> :<a href="GlobalProxy.html">GlobalProxy</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="GlobalProxy.html">GlobalProxy</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="index.js.html">index.js</a>,
+				 <a href="index.js.html#sunlight-1-line-39">line 39</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="~HttpProxy">
+    <h4 id="~HttpProxy"><span class="type-signature">&lt;inner> </span>HttpProxy<span class="type-signature"> :<a href="HttpProxy.html">HttpProxy</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="HttpProxy.html">HttpProxy</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="index.js.html">index.js</a>,
+				 <a href="index.js.html#sunlight-1-line-48">line 48</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="~interactive">
+    <h4 id="~interactive"><span class="type-signature">&lt;inner> </span>interactive<span class="type-signature"> :<a href="global.html#interactive">interactive</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="global.html#interactive">interactive</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="index.js.html">index.js</a>,
+				 <a href="index.js.html#sunlight-1-line-57">line 57</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="~Steps">
+    <h4 id="~Steps"><span class="type-signature">&lt;inner> </span>Steps<span class="type-signature"> :ProxySteps</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">ProxySteps</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="index.js.html">index.js</a>,
+				 <a href="index.js.html#sunlight-1-line-84">line 84</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        </dl>
+    
 
     
 
@@ -434,7 +693,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2017-11-27T19:25:49+02:00
+		on 2017-11-28T22:23:07+02:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

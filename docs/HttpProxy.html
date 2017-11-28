@@ -33,21 +33,35 @@
 			<li class="dropdown">
 				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-config-config.html">config~config</a></li>
+					<li><a href="module-config-GlaceProxyConfig.html">config~GlaceProxyConfig</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-baseProxy.html">baseProxy</a></li><li><a href="module-cli.html">cli</a></li><li><a href="module-commands.html">commands</a></li><li><a href="module-config.html">config</a></li><li><a href="module-globalProxy.html">globalProxy</a></li><li><a href="module-help.html">help</a></li><li><a href="module-httpProxy.html">httpProxy</a></li><li><a href="module-index.html">index</a></li><li><a href="module-interactive.html">interactive</a></li><li><a href="module-middleware_cache.html">middleware/cache</a></li><li><a href="module-middleware_index.html">middleware/index</a></li><li><a href="module-middleware_info.html">middleware/info</a></li><li><a href="module-middleware_reqBody.html">middleware/reqBody</a></li><li><a href="module-middleware_resHead.html">middleware/resHead</a></li><li><a href="module-middleware_speed.html">middleware/speed</a></li><li><a href="module-steps.html">steps</a></li>
+					<li><a href="module-baseProxy.html">baseProxy</a></li><li><a href="module-cli.html">cli</a></li><li><a href="module-config.html">config</a></li><li><a href="module-help.html">help</a></li><li><a href="module-index.html">index</a></li><li><a href="module-middleware_cache.html">middleware/cache</a></li><li><a href="module-middleware_index.html">middleware/index</a></li><li><a href="module-middleware_info.html">middleware/info</a></li><li><a href="module-middleware_reqBody.html">middleware/reqBody</a></li><li><a href="module-middleware_resHead.html">middleware/resHead</a></li><li><a href="module-middleware_speed.html">middleware/speed</a></li><li><a href="module-steps.html">steps</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-baseProxy-BaseProxy.html">baseProxy~BaseProxy</a></li><li><a href="module-commands-Commands.html">commands~Commands</a></li><li><a href="module-globalProxy-GlobalProxy.html">globalProxy~GlobalProxy</a></li><li><a href="module-httpProxy-HttpProxy.html">httpProxy~HttpProxy</a></li>
+					<li><a href="Commands.html">Commands</a></li><li><a href="GlobalProxy.html">GlobalProxy</a></li><li><a href="HttpProxy.html">HttpProxy</a></li><li><a href="module-baseProxy-BaseProxy.html">baseProxy~BaseProxy</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="mixins.list.html" class="dropdown-toggle" data-toggle="dropdown">Mixins<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-steps-ProxySteps.html">steps~ProxySteps</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#_onError">_onError</a></li><li><a href="global.html#interactive">interactive</a></li>
 				</ul>
 			</li>
 			
@@ -85,8 +99,6 @@
 <header>
     
         <h2>
-            <span class="ancestors"><a href="module-httpProxy.html">httpProxy</a>~</span>
-        
         HttpProxy
         </h2>
         
@@ -108,7 +120,7 @@
 
     
     <div class="description">
-        <p>Http Proxy.</p>
+        <p>HTTP Proxy.</p>
     </div>
     
 
@@ -256,7 +268,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="httpProxy.js.html">httpProxy.js</a>,
-				 <a href="httpProxy.js.html#sunlight-1-line-37">line 37</a>
+				 <a href="httpProxy.js.html#sunlight-1-line-2">line 2</a>
 			</li>
 		</ul>
 	</dd>
@@ -412,7 +424,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="httpProxy.js.html">httpProxy.js</a>,
-				 <a href="httpProxy.js.html#sunlight-1-line-89">line 89</a>
+				 <a href="httpProxy.js.html#sunlight-1-line-87">line 87</a>
 			</li>
 		</ul>
 	</dd>
@@ -445,7 +457,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="start"><span class="type-signature"></span>start()</h4>
+    <h4 class="name" id="start"><span class="type-signature">&lt;async> </span>start()</h4>
     
     
 </dt>
@@ -525,6 +537,32 @@
     
 
     
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <ul>
+<li>Proxy URL.</li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;string></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
 
     
 </dd>
@@ -588,7 +626,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="httpProxy.js.html">httpProxy.js</a>,
-				 <a href="httpProxy.js.html#sunlight-1-line-142">line 142</a>
+				 <a href="httpProxy.js.html#sunlight-1-line-143">line 143</a>
 			</li>
 		</ul>
 	</dd>
@@ -671,7 +709,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2017-11-27T19:25:49+02:00
+		on 2017-11-28T22:23:07+02:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
