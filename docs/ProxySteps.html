@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>GlaseJS Proxy Module: steps</title>
+	<title>GlaseJS Mixin: ProxySteps</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -20,7 +20,7 @@
 <div class="navbar navbar-default navbar-fixed-top ">
 <div class="container">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="index.html">GlaseJS Proxy</a>
+		<a class="navbar-brand" href="index.html">GlaseJS</a>
 		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
@@ -33,35 +33,35 @@
 			<li class="dropdown">
 				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-config-GlaceProxyConfig.html">config~GlaceProxyConfig</a></li>
+					<li><a href="module-config-GlaceConfig.html">config~GlaceConfig</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-baseProxy.html">baseProxy</a></li><li><a href="module-cli.html">cli</a></li><li><a href="module-config.html">config</a></li><li><a href="module-help.html">help</a></li><li><a href="module-index.html">index</a></li><li><a href="module-middleware_cache.html">middleware/cache</a></li><li><a href="module-middleware_index.html">middleware/index</a></li><li><a href="module-middleware_info.html">middleware/info</a></li><li><a href="module-middleware_reqBody.html">middleware/reqBody</a></li><li><a href="module-middleware_resHead.html">middleware/resHead</a></li><li><a href="module-middleware_speed.html">middleware/speed</a></li><li><a href="module-steps.html">steps</a></li>
+					<li><a href="module-cli.html">cli</a></li><li><a href="module-config.html">config</a></li><li><a href="module-fixtures.html">fixtures</a></li><li><a href="module-help.html">help</a></li><li><a href="module-index.html">index</a></li><li><a href="module-middleware_cache.html">middleware/cache</a></li><li><a href="module-middleware_index.html">middleware/index</a></li><li><a href="module-middleware_info.html">middleware/info</a></li><li><a href="module-middleware_reqBody.html">middleware/reqBody</a></li><li><a href="module-middleware_resHead.html">middleware/resHead</a></li><li><a href="module-middleware_speed.html">middleware/speed</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="Commands.html">Commands</a></li><li><a href="GlobalProxy.html">GlobalProxy</a></li><li><a href="HttpProxy.html">HttpProxy</a></li><li><a href="module-baseProxy-BaseProxy.html">baseProxy~BaseProxy</a></li>
+					<li><a href="BaseProxy.html">BaseProxy</a></li><li><a href="Commands.html">Commands</a></li><li><a href="GlobalProxy.html">GlobalProxy</a></li><li><a href="HttpProxy.html">HttpProxy</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="mixins.list.html" class="dropdown-toggle" data-toggle="dropdown">Mixins<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-steps-ProxySteps.html">steps~ProxySteps</a></li>
+					<li><a href="ProxySteps.html">ProxySteps</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="global.html#_onError">_onError</a></li><li><a href="global.html#interactive">interactive</a></li>
+					<li><a href="global.html#_onError">_onError</a></li><li><a href="global.html#fxGlobalProxy">fxGlobalProxy</a></li><li><a href="global.html#fxHttpProxy">fxHttpProxy</a></li><li><a href="global.html#interactive">interactive</a></li>
 				</ul>
 			</li>
 			
@@ -93,10 +93,15 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Module: steps</h1>
+	<h1 class="page-title">Mixin: ProxySteps</h1>
 <section>
 
 <header>
+    
+        <h2>
+        ProxySteps
+        </h2>
+        
     
 </header>
 
@@ -105,7 +110,7 @@
     <div class="container-overview">
     
         
-            <div class="description"><p><code>GlaceJS</code> steps for proxy.</p></div>
+            <div class="description"><p>Steps to manage proxy.</p></div>
         
 
         
@@ -168,13 +173,6 @@
 
     
 
-    
-        <h3 class="subsection-title">Mixins</h3>
-
-        <dl>
-            <dt><a href="module-steps-ProxySteps.html">ProxySteps</a></dt>
-            <dd></dd>
-        </dl>
     
 
     
@@ -401,7 +399,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-34">line 34</a>
+				 <a href="steps.js.html#sunlight-1-line-30">line 30</a>
 			</li>
 		</ul>
 	</dd>
@@ -489,7 +487,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-441">line 441</a>
+				 <a href="steps.js.html#sunlight-1-line-437">line 437</a>
 			</li>
 		</ul>
 	</dd>
@@ -607,7 +605,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-428">line 428</a>
+				 <a href="steps.js.html#sunlight-1-line-424">line 424</a>
 			</li>
 		</ul>
 	</dd>
@@ -695,7 +693,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-417">line 417</a>
+				 <a href="steps.js.html#sunlight-1-line-413">line 413</a>
 			</li>
 		</ul>
 	</dd>
@@ -916,7 +914,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-106">line 106</a>
+				 <a href="steps.js.html#sunlight-1-line-102">line 102</a>
 			</li>
 		</ul>
 	</dd>
@@ -1193,7 +1191,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-351">line 351</a>
+				 <a href="steps.js.html#sunlight-1-line-347">line 347</a>
 			</li>
 		</ul>
 	</dd>
@@ -1502,7 +1500,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-243">line 243</a>
+				 <a href="steps.js.html#sunlight-1-line-239">line 239</a>
 			</li>
 		</ul>
 	</dd>
@@ -1753,7 +1751,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-313">line 313</a>
+				 <a href="steps.js.html#sunlight-1-line-309">line 309</a>
 			</li>
 		</ul>
 	</dd>
@@ -2160,7 +2158,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-170">line 170</a>
+				 <a href="steps.js.html#sunlight-1-line-166">line 166</a>
 			</li>
 		</ul>
 	</dd>
@@ -2243,7 +2241,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="startProxy"><span class="type-signature">&lt;async> </span>startProxy( [opts])</h4>
+    <h4 class="name" id="startHttpProxy"><span class="type-signature">&lt;async> </span>startHttpProxy( [opts])</h4>
     
     
 </dt>
@@ -2251,7 +2249,7 @@
 
     
     <div class="description">
-        <p>Step to start proxy. Step recall will be skipped if proxy wasn't
+        <p>Step to start HTTP proxy. Step recall will be skipped if proxy wasn't
  stopped before.</p>
     </div>
     
@@ -2627,7 +2625,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-62">line 62</a>
+				 <a href="steps.js.html#sunlight-1-line-58">line 58</a>
 			</li>
 		</ul>
 	</dd>
@@ -2905,7 +2903,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-214">line 214</a>
+				 <a href="steps.js.html#sunlight-1-line-210">line 210</a>
 			</li>
 		</ul>
 	</dd>
@@ -2988,7 +2986,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="stopProxy"><span class="type-signature">&lt;async> </span>stopProxy( [opts])</h4>
+    <h4 class="name" id="stopHttpProxy"><span class="type-signature">&lt;async> </span>stopHttpProxy( [opts])</h4>
     
     
 </dt>
@@ -2996,8 +2994,8 @@
 
     
     <div class="description">
-        <p>Step to stop proxy. Step call will be skipped if proxy wasn't launched
- before.</p>
+        <p>Step to stop HTTP proxy. Step call will be skipped if proxy wasn't
+ launched before.</p>
     </div>
     
 
@@ -3177,7 +3175,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-130">line 130</a>
+				 <a href="steps.js.html#sunlight-1-line-126">line 126</a>
 			</li>
 		</ul>
 	</dd>
@@ -3448,7 +3446,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-278">line 278</a>
+				 <a href="steps.js.html#sunlight-1-line-274">line 274</a>
 			</li>
 		</ul>
 	</dd>
@@ -3699,7 +3697,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-384">line 384</a>
+				 <a href="steps.js.html#sunlight-1-line-380">line 380</a>
 			</li>
 		</ul>
 	</dd>
@@ -3812,7 +3810,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2017-11-28T22:23:07+02:00
+		on 2017-12-02T22:25:12+02:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
