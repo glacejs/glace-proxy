@@ -148,3 +148,7 @@ As [GlaceJS](https://glacejs.github.io/glace-core/) framework plugin it will be 
 - [config](GlaceConfig.html)
 - [fixtures](global.html)
 - [steps](ProxySteps.html)
+
+### Test examples
+
+See [integration tests](https://github.com/glacejs/glace-js/blob/master/tests/integration/testProxy.js) in order to explore examples.
