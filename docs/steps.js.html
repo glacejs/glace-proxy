@@ -59,6 +59,13 @@
 			</li>
 			
 			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-release-notes.html">Release Notes</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
 				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
 					<li><a href="global.html#fxGlobalProxy">fxGlobalProxy</a></li><li><a href="global.html#fxHttpProxy">fxHttpProxy</a></li><li><a href="global.html#interactive">interactive</a></li>
@@ -156,14 +163,15 @@ var ProxySteps = {
      * @arg {number} [opts.port] - Proxy port. Default value will be
      *  requested from `config.proxyPort`.
      * @arg {boolean} [opts.check=true] - Flag to check that proxy was launched.
-     * @return {Promise&lt;string>} - Proxied URL.
-     * @throws {AssertionError} - If proxy was not launched.
+     * @return {Promise&lt;string>} Proxied URL.
+     * @return {Promise&lt;boolean} `false` if step was skipped
+     * @throws {AssertionError} If proxy was not launched.
      */
     startHttpProxy: async function (opts) {
 
         if (this._isProxyStarted) {
             LOG.warn("Step to start proxy was passed already");
-            return;
+            return false;
         };
 
         opts = U.defVal(opts, {});
@@ -202,8 +210,8 @@ var ProxySteps = {
      * @arg {object} [opts] - Step options.
      * @arg {boolean} [opts.check=true] - Flag to check that proxy URL is
      *  defined.
-     * @return {string} - Proxy URL.
-     * @throws {AssertionError} - If proxy URL isn't defined.
+     * @return {string} Proxy URL.
+     * @throws {AssertionError} If proxy URL isn't defined.
      */
     getProxyUrl: function (opts) {
         opts = U.defVal(opts, {});
@@ -226,14 +234,15 @@ var ProxySteps = {
      * @arg {object} [opts] - Step options.
      * @arg {boolean} [opts.check=true] - Flag to check that proxy was
      *  stopped.
-     * @return {Promise&lt;void>}
-     * @throws {AssertionError} - If proxy wasn't stopped.
+     * @return {Promise&lt;boolean>} `true` if step was passed, `false` if was
+     *  skipped.
+     * @throws {AssertionError} If proxy wasn't stopped.
      */
     stopHttpProxy: async function (opts) {
 
         if (!this._isProxyStarted) {
             LOG.warn("Step to start HTTP proxy wasn't passed yet");
-            return;
+            return false;
         };
 
         opts = U.defVal(opts, {});
@@ -248,6 +257,7 @@ var ProxySteps = {
 
         this.webUrl = CONF.web.Url;
         this._isProxyStarted = false;
+        return true;
     },
     /**
      * Step to start global proxy. Step recall will be skipped if global
@@ -266,14 +276,15 @@ var ProxySteps = {
      * @arg {number} [opts.port] - Proxy port. Default value will be
      *  requested from `config.globalProxyPort`.
      * @arg {boolean} [opts.check=true] - Flag to check that proxy was launched.
-     * @return {Promise&lt;void>}
-     * @throws {AssertionError} - If global proxy was not launched.
+     * @return {Promise&lt;boolean>} `true` if step was passed, `false` if was
+     *  skipped.
+     * @throws {AssertionError} If global proxy was not launched.
      */
     startGlobalProxy: async function (opts) {
 
         if (this._isGlobalProxyStarted) {
             LOG.warn("Step to start global proxy was passed already");
-            return;
+            return false;
         };
 
         opts = U.defVal(opts, {});
@@ -299,6 +310,7 @@ var ProxySteps = {
         };
 
         this._isGlobalProxyStarted = true;
+        return true;
     },
     /**
      * Step to stop global proxy. Step call will be skipped if global proxy
@@ -310,14 +322,15 @@ var ProxySteps = {
      * @arg {object} [opts] - Step options.
      * @arg {boolean} [opts.check=true] - Flag to check that global
      *  proxy was stopped.
-     * @return {Promise&lt;void>}
-     * @throws {AssertionError} - If global proxy wasn't stopped.
+     * @return {Promise&lt;boolean>} `true` if step was passed, `false` if was
+     *  skipped.
+     * @throws {AssertionError} If global proxy wasn't stopped.
      */
     stopGlobalProxy: async function (opts) {
 
         if (!this._isGlobalProxyStarted) {
             LOG.warn("Step to start global proxy wasn't passed yet");
-            return;
+            return false;
         };
 
         opts = U.defVal(opts, {});
@@ -330,6 +343,7 @@ var ProxySteps = {
                    "Global proxy wasn't stopped").be.false;
         };
         this._isGlobalProxyStarted = false;
+        return true;
     },
     /**
      * Step to limit proxy speed.
@@ -340,7 +354,8 @@ var ProxySteps = {
      * @arg {object} [opts] - Step options.
      * @arg {boolean} [opts.check=true] - Flat to check that proxy speed
      *  is limited.
-     * @throws {AssertionError} - If proxy speed is not limited.
+     * @return {boolean} `true` if step was passed.
+     * @throws {AssertionError} If proxy speed is not limited.
      */
     limitProxySpeed: function (speed, opts) {
 
@@ -366,6 +381,7 @@ var ProxySteps = {
                        "Global proxy speed is not limited").be.equal(speed);
             };
         };
+        return true;
     },
     /**
      * Step to unlimit proxy speed.
@@ -375,7 +391,8 @@ var ProxySteps = {
      * @arg {object} [opts] - Step options.
      * @arg {boolean} [opts.check=true] - Flag to check that proxy speed
      *  is unlimited.
-     * @throws {AssertionError} - If proxy speed is still limited.
+     * @return {boolean} `true` if step is passed.
+     * @throws {AssertionError} If proxy speed is still limited.
      */
     unlimitProxySpeed: function (opts) {
 
@@ -401,6 +418,7 @@ var ProxySteps = {
                        "Global proxy speed still has limited value").be.null;
             };
         };
+        return true;
     },
     /**
      * Step to start responses measurement.
@@ -410,7 +428,8 @@ var ProxySteps = {
      * @arg {object} [opts] - Step options.
      * @arg {boolean} [opts.check=true] - Flag to check that responses
      *  measurement is launched.
-     * @throws {AssertionError} - If responses measurement is not launched.
+     * @return {boolean} `true` if step is passed.
+     * @throws {AssertionError} If responses measurement is not launched.
      */
     measureResponses: function (opts) {
 
@@ -438,6 +457,7 @@ var ProxySteps = {
                     .to.exist;
             };
         };
+        return true;
     },
     /**
      * Step to get measured responses data.
@@ -447,8 +467,8 @@ var ProxySteps = {
      * @arg {object} [opts] - Step options.
      * @arg {boolean} [opts.check=true] - Flag to check that responses
      *  data are present.
-     * @throws {AssertionError} - If responses data are absent.
-     * @return {object[]} - List of captured response data.
+     * @throws {AssertionError} If responses data are absent.
+     * @return {object[]} List of captured response data.
      */
     getResponsesData: function (opts) {
 
@@ -481,7 +501,8 @@ var ProxySteps = {
      * @arg {object} [opts] - Step options.
      * @arg {boolean} [opts.check=true] - Flag to check that responses
      *  measurement is stopped.
-     * @throws {AssertionError} - If responses measurement is still running.
+     * @return {boolean} `true` if step is passed.
+     * @throws {AssertionError} If responses measurement is still running.
      */
     unmeasureResponses: function (opts) {
 
@@ -509,28 +530,33 @@ var ProxySteps = {
                     .to.be.null;
             };
         };
+        return true;
     },
     /**
      * Step to enable cache.
      *
      * @method
      * @instance
+     * @return {boolean} `true` if step is passed.
      */
     enableCache: function () {
         this._checkProxy();
         if (this.httpProxy) this.httpProxy.useCache = true;
         if (this.globalProxy) this.globalProxy.useCache = true;
+        return true;
     },
     /**
      * Step to disable cache.
      *
      * @method
      * @instance
+     * @return {boolean} `true` if step is passed.
      */
     disableCache: function () {
         this._checkProxy();
         if (this.httpProxy) this.httpProxy.useCache = false;
         if (this.globalProxy) this.globalProxy.useCache = false;
+        return true;
     },
     /**
      * Helper to check that proxy is launched.
@@ -541,8 +567,10 @@ var ProxySteps = {
      * @throws {AssertionError} - If no one proxy is launched.
      */
     _checkProxy: function () {
-        expect(this.httpProxy || this.globalProxy,
-               "No one proxy is launched").to.exist;
+        expect(
+            (this.httpProxy &amp;&amp; this.httpProxy.isRunning) ||
+            (this.globalProxy &amp;&amp; this.globalProxy.isRunning),
+            "No one proxy is launched").to.be.true;
     },
 };
 module.exports = ProxySteps;
@@ -591,7 +619,7 @@ module.exports = ProxySteps;
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2017-12-13T22:04:26+02:00
+		on 2017-12-17T13:49:36+02:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

@@ -59,6 +59,13 @@
 			</li>
 			
 			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-release-notes.html">Release Notes</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
 				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
 					<li><a href="global.html#fxGlobalProxy">fxGlobalProxy</a></li><li><a href="global.html#fxHttpProxy">fxHttpProxy</a></li><li><a href="global.html#interactive">interactive</a></li>
@@ -149,6 +156,10 @@ var Commands = function (config, opts) {
     this.__GlobalProxy = U.defVal(opts.GlobalProxy, GlobalProxy);
     this.__HttpProxy = U.defVal(opts.HttpProxy, HttpProxy);
     this.__isRunning = U.defVal(opts.isRunning, isRunning);
+    this.__chromeLauncher = U.defVal(opts.chromeLauncher, chromeLauncher);
+    this.__fs = U.defVal(opts.fs, fs);
+    this.__fse = U.defVal(opts.fse, fse);
+    this.__cache = U.defVal(opts.cache, cache);
 };
 module.exports = Commands;
 /**
@@ -171,7 +182,7 @@ Commands.prototype.setProxiedUrl = async function (proxiedUrl) {
  *
  * @async
  * @method
- * @return {Promise&lt;boolean>} - `true` if HTTP proxy was launched. `false` if
+ * @return {Promise&lt;boolean>} `true` if HTTP proxy was launched. `false` if
  *  command can't be executed. Causes to not launch HTTP proxy:
  *  - HTTP proxy is launched already.
  *  - Proxied URL isn't specified.
@@ -223,11 +234,13 @@ Commands.prototype.launchHttpProxy = async function () {
  *
  * @async
  * @method
- * @return {Promise&lt;boolean>} - `true` if HTTP proxy was stopped. `false` if
+ * @arg {object} [opts] - Options.
+ * @arg {boolean} [opts.restartChrome=true] - Restart chrome.
+ * @return {Promise&lt;boolean>} `true` if HTTP proxy was stopped. `false` if
  *  command can't be executed. Causes to not stop HTTP proxy:
  *  - HTTP proxy isn't launched yet.
  */
-Commands.prototype.stopHttpProxy = async function () {
+Commands.prototype.stopHttpProxy = async function (opts) {
 
     if (!this._isHttpProxyLaunched()) {
         var msg = "HTTP proxy isn't launched yet";
@@ -236,7 +249,11 @@ Commands.prototype.stopHttpProxy = async function () {
         return false;
     };
 
+    opts = U.defVal(opts, {});
+    var restartChrome = U.defVal(opts.restartChrome, true);
+
     this._httpProxy.stop();
+    if (restartChrome &amp;&amp; this._isChromeLaunched()) await this.restartChrome();
     return true;
 };
 /**
@@ -244,19 +261,21 @@ Commands.prototype.stopHttpProxy = async function () {
  *
  * @async
  * @method
- * @return {Promise&lt;boolean>} - `true` if HTTP proxy was restarted. `false` if
+ * @return {Promise&lt;boolean>} `true` if HTTP proxy was restarted. `false` if
  *  command can't be executed. Causes to not restart HTTP proxy are the same as
  *  for command to launch HTTP proxy.
  */
 Commands.prototype.restartHttpProxy = function() {
-    return this.stopHttpProxy().then(() => this.launchHttpProxy());
+    return this
+        .stopHttpProxy({ restartChrome: false })
+        .then(() => this.launchHttpProxy());
 };
 /**
  * Command to launch global transparent proxy.
  *
  * @async
  * @method
- * @return {Promise&lt;boolean>} - `true` if global transparent proxy isn't
+ * @return {Promise&lt;boolean>} `true` if global transparent proxy isn't
  *  launched. `false` if command can't be executed. Causes to not launch
  *  global transparent proxy:
  *  - Global transparent proxy is launched already.
@@ -274,10 +293,10 @@ Commands.prototype.launchGlobalProxy = function () {
         port: this._config.proxy.globalPort,
         timeout: this._config.proxy.timeout,
         reconnect: this._config.proxy.reconnect,
-        installCertificate: this._config.installCertificate,
-        rootPath: this._config.rootPath,
+        installCertificate: this._config.proxy.installCertificate,
+        sslCaDir: this._config.proxy.sslCaDir,
         useCache: this._config.cache.use,
-        speed: this._config.speed,
+        speed: this._config.proxy.speed,
     });
 
     return this._globalProxy
@@ -303,12 +322,14 @@ Commands.prototype.launchGlobalProxy = function () {
  *
  * @async
  * @method
- * @return {Promise&lt;boolean>} - `true` if global transparent proxy was stopped.
+ * @arg {object} [opts] - Options.
+ * @arg {boolean} [opts.restartChrome=true] - Restart chrome.
+ * @return {Promise&lt;boolean>} `true` if global transparent proxy was stopped.
  *  `false` if command can't be executed. Causes to not stop global transparent
  *  proxy:
  *  - Global transparent proxy isn't launched yet.
  */
-Commands.prototype.stopGlobalProxy = async function () {
+Commands.prototype.stopGlobalProxy = async function (opts) {
 
     if (!this._isGlobalProxyLaunched()) {
         var msg = "Global transparent proxy isn't launched yet";
@@ -317,7 +338,11 @@ Commands.prototype.stopGlobalProxy = async function () {
         return false;
     };
 
+    opts = U.defVal(opts, {});
+    var restartChrome = U.defVal(opts.restartChrome, true);
+
     this._globalProxy.stop();
+    if (restartChrome &amp;&amp; this._isChromeLaunched()) await this.restartChrome();
     return true;
 };
 /**
@@ -325,25 +350,32 @@ Commands.prototype.stopGlobalProxy = async function () {
  *
  * @async
  * @method
- * @return {Promise&lt;boolean>} - `true` if global transparent proxy was restarted.
+ * @return {Promise&lt;boolean>} `true` if global transparent proxy was restarted.
  *  `false` if command can't be executed. Causes to not restart global
  *  transparent proxy are the same as for command to launch global
  *  transparent proxy.
  */
 Commands.prototype.restartGlobalProxy = function() {
-    return this.stopGlobalProxy().then(() => this.launchGlobalProxy());
+    return this
+        .stopGlobalProxy({ restartChrome: false })
+        .then(() => this.launchGlobalProxy());
 };
 /**
  * Command to launch chrome browser.
  *
  * @async
  * @method
- * @return {Promise&lt;boolean>} - `true` if chrome browser was launched. `false`
+ * @arg {object} [opts] - Options.
+ * @arg {string[]} [opts.chromeOpts=[]] - Chrome options list.
+ * @return {Promise&lt;boolean>} `true` if chrome browser was launched. `false`
  *  if command can't be executed. Causes to not launch chrome browser:
  *  - HTTP proxy isn't launched yet.
  *  - Chrome browser is launched already.
  */
-Commands.prototype.launchChrome = async function () {
+Commands.prototype.launchChrome = async function (opts) {
+
+    opts = U.defVal(opts, {});
+    var chromeOpts = U.defVal(opts.chromeOpts, []);
 
     if (this._isChromeLaunched()) {
         var msg = "Chrome browser is launched already";
@@ -353,28 +385,41 @@ Commands.prototype.launchChrome = async function () {
     };
 
     var chromeFlags = [
-        "--start-maximized",
-        "--disable-infobars",
-        "--enable-precise-memory-info",
-        "--disable-translate",
+        "start-maximized",
+        "disable-infobars",
+        "enable-precise-memory-info",
+        "disable-translate",
     ];
 
-    if (this._config.chrome.incognito) {
-        chromeFlags.push("--incognito");
+    for (var opt of chromeOpts) {
+        if (!isOptPresent(opt, chromeFlags)) chromeFlags.push(opt);
+    };
+
+    if (this._config.chrome.incognito &amp;&amp; !isOptPresent("incognito", chromeFlags)) {
+        chromeFlags.push("incognito");
     };
 
     if (this._isGlobalProxyLaunched()) {
-        chromeFlags = chromeFlags.concat([
-            "--ignore-certificate-errors",
-            `--proxy-server=${U.hostname}:${this._config.proxy.globalPort}`,
-            `--proxy-bypass-list=localhost,127.0.0.1,${U.hostname}`,
-        ]);
+        var proxyOpts = [
+            "ignore-certificate-errors",
+            `proxy-server=${U.hostname}:${this._config.proxy.globalPort}`,
+            `proxy-bypass-list=localhost,127.0.0.1,${U.hostname}`,
+        ];
+        for (var opt of proxyOpts) {
+            if (!isOptPresent(opt, chromeFlags)) chromeFlags.push(opt);
+        };
+    };
+
+    for (var i = 0; i &lt; chromeFlags.length; i++) {
+        if (!chromeFlags[i].startsWith("-")) {
+            chromeFlags[i] = "--" + chromeFlags[i];
+        };
     };
 
     var profileDir = temp.path();
     fse.mkdirsSync(profileDir);
 
-    return chromeLauncher.launch({
+    return this.__chromeLauncher.launch({
 
         startingUrl: this._chromeUrl(),
         userDataDir: profileDir,
@@ -405,7 +450,7 @@ Commands.prototype.launchChrome = async function () {
  *
  * @async
  * @method
- * @return {Promise&lt;boolean>} - `true` if chrome browser was closed. `false` if
+ * @return {Promise&lt;boolean>} `true` if chrome browser was closed. `false` if
  *  command can't be executed. Causes to not close chrome browser:
  *  - Chrome browser isn't launched yet.
  */
@@ -418,7 +463,7 @@ Commands.prototype.closeChrome = async function () {
         return false;
     };
 
-    this._chrome.kill();
+    await this._chrome.kill();
     this._chrome = null;
     return true;
 };
@@ -427,7 +472,7 @@ Commands.prototype.closeChrome = async function () {
  *
  * @async
  * @method
- * @return {Promise&lt;boolean>} - `true` if chrome browser was restarted. `false`
+ * @return {Promise&lt;boolean>} `true` if chrome browser was restarted. `false`
  *  if command can't be executed. Causes to not restart chrome browser are the
  *  the same as for command to launch chrome browser.
  */
@@ -440,7 +485,7 @@ Commands.prototype.restartChrome = function () {
  * @async
  * @method
  * @arg {number} speed - Proxy speed, kb/s.
- * @return {Promise&lt;boolean>} - `true` if proxy speed was set. `false` if
+ * @return {Promise&lt;boolean>} `true` if proxy speed was set. `false` if
  *  command can't be executed. Causes to not set proxy speed:
  *  - HTTP proxy isn't launched.
  */
@@ -460,7 +505,7 @@ Commands.prototype.setProxySpeed = async function (speed) {
  *
  * @async
  * @method
- * @return {Promise&lt;boolean>} - `true` if proxy speed was reset. `false` if
+ * @return {Promise&lt;boolean>} `true` if proxy speed was reset. `false` if
  *  command can't be executed. Causes to not reset proxy speed:
  *  - HTTP proxy isn't launched.
  */
@@ -480,7 +525,7 @@ Commands.prototype.resetProxySpeed = async function () {
  *
  * @async
  * @method
- * @return {Promise&lt;boolean>} - `true` if proxy cache wasn't enabled. `false` if
+ * @return {Promise&lt;boolean>} `true` if proxy cache wasn't enabled. `false` if
  *  command can't be executed. Causes to not enable proxy cache:
  *  - HTTP proxy isn't launched.
  */
@@ -500,7 +545,7 @@ Commands.prototype.enableProxyCache = async function () {
  *
  * @async
  * @method
- * @return {Promise&lt;boolean>} - `true` if proxy cache wasn't disabled. `false`
+ * @return {Promise&lt;boolean>} `true` if proxy cache wasn't disabled. `false`
  *  if command can't be executed. Causes to not disable proxy cache:
  *  - HTTP proxy isn't launched.
  */
@@ -520,20 +565,21 @@ Commands.prototype.disableProxyCache = async function () {
  *
  * @async
  * @method
- * @return {Promise}
+ * @return {Promise&lt;boolean>} `true` when cache will be cleared.
  */
 Commands.prototype.clearProxyCache = async function () {
-    if (fs.existsSync(this._config.cache.folder)) {
-        fse.removeSync(this._config.cache.folder);
+    if (this.__fs.existsSync(this._config.cache.folder)) {
+        this.__fse.removeSync(this._config.cache.folder);
     };
-    await cache.init({ force: true });
+    await this.__cache.init({ force: true });
+    return true;
 };
 /**
  * Helper to check whether any proxy is launched.
  *
  * @method
  * @protected
- * @return {boolean} - `true` if proxy exists and launched, `false` otherwise.
+ * @return {boolean} `true` if proxy exists and launched, `false` otherwise.
  */
 Commands.prototype._checkProxy = function () {
     if ((this._isHttpProxyLaunched()) ||
@@ -559,10 +605,10 @@ Commands.prototype._isChromeLaunched = function () {
  *
  * @method
  * @protected
- * @return {string} - URL to open chrome.
+ * @return {string} URL to open chrome.
  */
 Commands.prototype._chromeUrl = function () {
-    if (this._httpProxy) {
+    if (this._isHttpProxyLaunched()) {
         return _.trim(
             this._httpProxy.url + url.parse(this._config.web.url).pathname, "/");
     } else {
@@ -588,6 +634,22 @@ Commands.prototype._isHttpProxyLaunched = function () {
  */
 Commands.prototype._isGlobalProxyLaunched = function () {
     return !!(this._globalProxy &amp;&amp; this._globalProxy.isRunning);
+};
+/**
+ * Helper to define whether chrome option is present in options list.
+ * 
+ * @ignore
+ * @function
+ * @arg {string} opt - Checking option.
+ * @arg {string[]} opts - List of options.
+ * @return {boolean}
+ */
+var isOptPresent = (opt, opts) => {
+    var optStart = opt.split("=")[0];
+    for (var o of opts) {
+        if (o.split("=")[0] === optStart) return true;
+    };
+    return false;
 };
 </pre>
     </article>
@@ -634,7 +696,7 @@ Commands.prototype._isGlobalProxyLaunched = function () {
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2017-12-13T22:04:25+02:00
+		on 2017-12-17T13:49:35+02:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
