@@ -48,7 +48,7 @@ scope("HttpProxy", () => {
             expect(args[2]).to.be.equal("proxyOptions");
         });
 
-        chunk("logs error if there is not reconnect attemptions", () => {
+        chunk("logs error if there is no reconnect attemptions", () => {
             var req = {
                 _reconnect: 0,
                 socket: { destroyed: false },

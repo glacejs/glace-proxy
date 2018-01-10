@@ -1,3 +1,7 @@
+### v1.2.7
+
+- [Fixed](https://github.com/glacejs/glace-proxy/commit/5159b0952d1b921b6b660308e280167ccd2352ff) bug that on reconnect http proxy didn't use proxy options.
+
 ### v1.2.6
 
 - Fixed typo in help: use `--web-url` CLI option instead of wrong `--url`.
