@@ -114,6 +114,8 @@ Commands will be available after `glace-proxy` launching:
 - `proxy restart http` - Restart HTTP proxy.
 - `proxy restart global` - Restart global proxy.
 - `proxy speed <speed>` - Limit proxy speed, **kb/s**.
+- `proxy requests speed <speed>` - Limit proxy requests speed, **kb/s**.
+- `proxy responses speed <speed>` - Limit proxy responses speed, **kb/s**.
 - `proxy speed reset` - Unlimit proxy speed.
 - `chrome` - Launch google chrome browser. Pristine profile will be used each time.
 - `chrome close` - Close google chrome browser.
