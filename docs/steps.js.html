@@ -109,6 +109,10 @@
 /**
  * Steps to manage proxy.
  *
+ * These methods are mixed with glacejs [Steps](https://glacejs.github.io/glace-core/Steps.html)
+ * class and available via its instance [SS](https://glacejs.github.io/glace-core/global.html#SS)
+ * in tests.
+ *
  * @mixin ProxySteps
  * @prop {string} webUrl - Web application URL.
  * @prop {GlobalProxy} globalProxy - Global proxy instance.
@@ -134,9 +138,13 @@ var ProxySteps = {
      * Helper to register proxy classes.
      * 
      * @method
+     * @instance
      * @arg {object} [opts] - Options.
      * @arg {object} [opts.GlobalProxy] - Global proxy class.
      * @arg {object} [opts.HttpProxy] - HTTP proxy class.
+     * @example
+     *
+     * SS.registerProxy({ GlobalProxy: MyGlobalProxy, HttpProxy: MyHttpProxy });
      */
     registerProxy: function (opts) {
         opts = U.defVal(opts, {});
@@ -166,6 +174,11 @@ var ProxySteps = {
      * @return {Promise&lt;string>} Proxied URL.
      * @return {Promise&lt;boolean} `false` if step was skipped
      * @throws {AssertionError} If proxy was not launched.
+     * @example
+     *
+     * var proxiedUrl = await SS.startHttpProxy();
+     * var proxiedUrl = await SS.startHttpProxy({ webUrl: "http://example.com", });
+     * var proxiedUrl = await SS.startHttpProxy({ webUrl: "http://example.com", port: 8080 });
      */
     startHttpProxy: async function (opts) {
 
@@ -212,6 +225,9 @@ var ProxySteps = {
      *  defined.
      * @return {string} Proxy URL.
      * @throws {AssertionError} If proxy URL isn't defined.
+     * @example
+     *
+     * var proxiedUrl = SS.getProxiedUrl();
      */
     getProxyUrl: function (opts) {
         opts = U.defVal(opts, {});
@@ -237,6 +253,9 @@ var ProxySteps = {
      * @return {Promise&lt;boolean>} `true` if step was passed, `false` if was
      *  skipped.
      * @throws {AssertionError} If proxy wasn't stopped.
+     * @example
+     *
+     * await SS.stopHttpProxy();
      */
     stopHttpProxy: async function (opts) {
 
@@ -279,6 +298,10 @@ var ProxySteps = {
      * @return {Promise&lt;boolean>} `true` if step was passed, `false` if was
      *  skipped.
      * @throws {AssertionError} If global proxy was not launched.
+     * @example
+     *
+     * await SS.startGlobalProxy();
+     * await SS.startGlobalProxy({ timeout: 30000 });
      */
     startGlobalProxy: async function (opts) {
 
@@ -325,6 +348,9 @@ var ProxySteps = {
      * @return {Promise&lt;boolean>} `true` if step was passed, `false` if was
      *  skipped.
      * @throws {AssertionError} If global proxy wasn't stopped.
+     * @example
+     *
+     * await SS.stopGlobalProxy();
      */
     stopGlobalProxy: async function (opts) {
 
@@ -358,6 +384,10 @@ var ProxySteps = {
      *  is limited.
      * @return {boolean} `true` if step was passed.
      * @throws {AssertionError} If proxy speed is not limited.
+     * @example
+     *
+     * SS.limitProxySpeed(512);
+     * SS.limitProxySpeed({ res: 512 });
      */
     limitProxySpeed: function (speed, opts) {
 
@@ -415,6 +445,9 @@ var ProxySteps = {
      *  is unlimited.
      * @return {boolean} `true` if step is passed.
      * @throws {AssertionError} If proxy speed is still limited.
+     * @example
+     *
+     * SS.unlimitProxySpeed();
      */
     unlimitProxySpeed: function (opts) {
 
@@ -460,6 +493,9 @@ var ProxySteps = {
      *  measurement is launched.
      * @return {boolean} `true` if step is passed.
      * @throws {AssertionError} If responses measurement is not launched.
+     * @example
+     *
+     * SS.measureResponses();
      */
     measureResponses: function (opts) {
 
@@ -499,6 +535,9 @@ var ProxySteps = {
      *  data are present.
      * @throws {AssertionError} If responses data are absent.
      * @return {object[]} List of captured response data.
+     * @example
+     *
+     * var responses = SS.getResponsesData();
      */
     getResponsesData: function (opts) {
 
@@ -533,6 +572,9 @@ var ProxySteps = {
      *  measurement is stopped.
      * @return {boolean} `true` if step is passed.
      * @throws {AssertionError} If responses measurement is still running.
+     * @example
+     *
+     * SS.unmeasureResponses();
      */
     unmeasureResponses: function (opts) {
 
@@ -568,6 +610,9 @@ var ProxySteps = {
      * @method
      * @instance
      * @return {boolean} `true` if step is passed.
+     * @example
+     *
+     * SS.enableCache();
      */
     enableCache: function () {
         this._checkProxy();
@@ -581,6 +626,9 @@ var ProxySteps = {
      * @method
      * @instance
      * @return {boolean} `true` if step is passed.
+     * @example
+     *
+     * SS.disableCache();
      */
     disableCache: function () {
         this._checkProxy();
@@ -591,6 +639,7 @@ var ProxySteps = {
     /**
      * Helper to check that proxy is launched.
      *
+     * @ignore
      * @method
      * @protected
      * @instance
@@ -649,7 +698,7 @@ module.exports = ProxySteps;
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2018-01-10T23:58:12+02:00
+		on 2018-02-14T23:29:59+02:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

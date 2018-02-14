@@ -117,7 +117,10 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>Steps to manage proxy.</p></div>
+            <div class="description"><p>Steps to manage proxy.</p>
+<p>These methods are mixed with glacejs <a href="https://glacejs.github.io/glace-core/Steps.html">Steps</a>
+class and available via its instance <a href="https://glacejs.github.io/glace-core/global.html#SS">SS</a>
+in tests.</p></div>
         
 
         
@@ -294,370 +297,6 @@
             
 <hr>
 <dt>
-    <h4 class="name" id=".registerProxy"><span class="type-signature">&lt;static> </span>registerProxy( [opts])</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Helper to register proxy classes.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Argument</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>opts</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>Options.</p>
-                <h6 class="method-params-label method-subparams-label">Properties</h6>
-                
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Argument</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>GlobalProxy</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>Global proxy class.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>HttpProxy</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>HTTP proxy class.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-34">line 34</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="_checkProxy"><span class="type-signature">&lt;protected> </span>_checkProxy()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Helper to check that proxy is launched.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-492">line 492</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Throws:</h5>
-    
-            
-
-<dl>
-    <dt>
-        <div class="param-desc">
-        <ul>
-<li>If no one proxy is launched.</li>
-</ul>
-        </div>
-    </dt>
-    <dt>
-        <dl>
-            <dt>
-                Type
-            </dt>
-            <dd>
-                
-<span class="param-type">AssertionError</span>
-
-
-
-            </dd>
-        </dl>
-    </dt>
-</dl>
-
-
-        
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
     <h4 class="name" id="disableCache"><span class="type-signature"></span>disableCache()</h4>
     
     
@@ -713,7 +352,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-478">line 478</a>
+				 <a href="steps.js.html#sunlight-1-line-526">line 526</a>
 			</li>
 		</ul>
 	</dd>
@@ -762,6 +401,12 @@
 
 
         
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">SS.disableCache();</pre>
+
 
     
 </dd>
@@ -825,7 +470,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-465">line 465</a>
+				 <a href="steps.js.html#sunlight-1-line-510">line 510</a>
 			</li>
 		</ul>
 	</dd>
@@ -874,6 +519,12 @@
 
 
         
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">SS.enableCache();</pre>
+
 
     
 </dd>
@@ -1070,7 +721,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-109">line 109</a>
+				 <a href="steps.js.html#sunlight-1-line-125">line 125</a>
 			</li>
 		</ul>
 	</dd>
@@ -1147,6 +798,12 @@
 
 
         
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">var proxiedUrl = SS.getProxiedUrl();</pre>
+
 
     
 </dd>
@@ -1343,7 +1000,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-396">line 396</a>
+				 <a href="steps.js.html#sunlight-1-line-435">line 435</a>
 			</li>
 		</ul>
 	</dd>
@@ -1420,6 +1077,12 @@
 
 
         
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">var responses = SS.getResponsesData();</pre>
+
 
     
 </dd>
@@ -1751,7 +1414,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-255">line 255</a>
+				 <a href="steps.js.html#sunlight-1-line-285">line 285</a>
 			</li>
 		</ul>
 	</dd>
@@ -1828,6 +1491,13 @@
 
 
         
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">SS.limitProxySpeed(512);
+SS.limitProxySpeed({ res: 512 });</pre>
+
 
     
 </dd>
@@ -2024,7 +1694,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-357">line 357</a>
+				 <a href="steps.js.html#sunlight-1-line-393">line 393</a>
 			</li>
 		</ul>
 	</dd>
@@ -2101,6 +1771,264 @@
 
 
         
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">SS.measureResponses();</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="registerProxy"><span class="type-signature"></span>registerProxy( [opts])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Helper to register proxy classes.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Options.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>GlobalProxy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Global proxy class.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>HttpProxy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>HTTP proxy class.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="steps.js.html">steps.js</a>,
+				 <a href="steps.js.html#sunlight-1-line-42">line 42</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">SS.registerProxy({ GlobalProxy: MyGlobalProxy, HttpProxy: MyHttpProxy });</pre>
+
 
     
 </dd>
@@ -2453,7 +2381,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-176">line 176</a>
+				 <a href="steps.js.html#sunlight-1-line-199">line 199</a>
 			</li>
 		</ul>
 	</dd>
@@ -2531,6 +2459,13 @@
 
 
         
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">await SS.startGlobalProxy();
+await SS.startGlobalProxy({ timeout: 30000 });</pre>
+
 
     
 </dd>
@@ -2923,7 +2858,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-63">line 63</a>
+				 <a href="steps.js.html#sunlight-1-line-76">line 76</a>
 			</li>
 		</ul>
 	</dd>
@@ -3005,6 +2940,14 @@
 
 </li>
         </ul>
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">var proxiedUrl = await SS.startHttpProxy();
+var proxiedUrl = await SS.startHttpProxy({ webUrl: &quot;http://example.com&quot;, });
+var proxiedUrl = await SS.startHttpProxy({ webUrl: &quot;http://example.com&quot;, port: 8080 });</pre>
+
 
     
 </dd>
@@ -3202,7 +3145,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-222">line 222</a>
+				 <a href="steps.js.html#sunlight-1-line-248">line 248</a>
 			</li>
 		</ul>
 	</dd>
@@ -3280,6 +3223,12 @@
 
 
         
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">await SS.stopGlobalProxy();</pre>
+
 
     
 </dd>
@@ -3477,7 +3426,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-134">line 134</a>
+				 <a href="steps.js.html#sunlight-1-line-153">line 153</a>
 			</li>
 		</ul>
 	</dd>
@@ -3555,6 +3504,12 @@
 
 
         
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">await SS.stopHttpProxy();</pre>
+
 
     
 </dd>
@@ -3751,7 +3706,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-312">line 312</a>
+				 <a href="steps.js.html#sunlight-1-line-345">line 345</a>
 			</li>
 		</ul>
 	</dd>
@@ -3828,6 +3783,12 @@
 
 
         
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">SS.unlimitProxySpeed();</pre>
+
 
     
 </dd>
@@ -4024,7 +3985,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="steps.js.html">steps.js</a>,
-				 <a href="steps.js.html#sunlight-1-line-430">line 430</a>
+				 <a href="steps.js.html#sunlight-1-line-472">line 472</a>
 			</li>
 		</ul>
 	</dd>
@@ -4103,6 +4064,12 @@
         
 
     
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">SS.unmeasureResponses();</pre>
+
+
+    
 </dd>
 
         </dl>
@@ -4159,7 +4126,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2018-01-10T23:58:12+02:00
+		on 2018-02-14T23:30:00+02:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
