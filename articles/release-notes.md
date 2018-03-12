@@ -1,3 +1,7 @@
+### v1.2.9
+
+- [Used](https://github.com/glacejs/glace-proxy/commit/5cbaf120c8c93c61b4e99890ff3a697e8eba277d) docstring style in steps.
+
 ### v1.2.8
 
 - [Added](https://github.com/glacejs/glace-proxy/commit/72aefab361c2266ff365044abb36592807ded232) feature to manage requests and responses proxy speed separately and together.
