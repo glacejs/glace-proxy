@@ -11,7 +11,7 @@ test("plugin help contains option", () => {
     });
 
     chunk("http-proxy-port", () => {
-        expect(opts["http-proxy-port"]).to.exist;
+        expect(opts["http-proxy-port [number]"]).to.exist;
     });
 
     chunk("global-proxy", () => {
@@ -19,7 +19,7 @@ test("plugin help contains option", () => {
     });
 
     chunk("global-proxy-port", () => {
-        expect(opts["global-proxy-port"]).to.exist;
+        expect(opts["global-proxy-port [number]"]).to.exist;
     });
 
     chunk("install-certificate", () => {
@@ -35,6 +35,6 @@ test("plugin help contains option", () => {
     });
 
     chunk("reconnect", () => {
-        expect(opts["reconnect"]).to.exist;
+        expect(opts["reconnect [value]"]).to.exist;
     });
 });
