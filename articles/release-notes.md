@@ -1,3 +1,9 @@
+### v1.3.0
+
+- [Added](https://github.com/glacejs/glace-proxy/commit/d99e368909b55978f2b00664bb010b9320e9c03c) project workflow commands.
+- [Expanded](https://github.com/glacejs/glace-proxy/commit/d99e368909b55978f2b00664bb010b9320e9c03c) plugin help.
+- [Logged](https://github.com/glacejs/glace-proxy/commit/4d5fd832cedb45a0edffd437593adf06a51301f7) steps.
+
 ### v1.2.9
 
 - [Used](https://github.com/glacejs/glace-proxy/commit/5cbaf120c8c93c61b4e99890ff3a697e8eba277d) docstring style in steps.
