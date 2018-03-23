@@ -178,7 +178,7 @@ var ProxySteps = {
          *  requested from `config.proxyPort`.
          * @arg {boolean} [opts.check=true] - Flag to check that proxy was launched.
          * @return {Promise&lt;string>} Proxied URL.
-         * @return {Promise&lt;boolean} `false` if step was skipped
+         * @return {Promise&lt;boolean>} `false` if step was skipped
          * @throws {AssertionError} If proxy was not launched.
          * @example
          *
@@ -202,6 +202,8 @@ var ProxySteps = {
 
         expect(webUrl, "Web URL for http proxy isn't specified").to.exist;
 
+        LOG.info("Starting http proxy...");
+
         this.httpProxy = this.httpProxy || new this.__HttpProxy({
             url: webUrl,
             useCache: useCache,
@@ -212,12 +214,15 @@ var ProxySteps = {
 
         if (check) {
             expect(this.httpProxy.isRunning,
-                   "HTTP proxy was not launched").be.true;
+                "HTTP proxy was not launched").be.true;
         };
         this._isProxyStarted = true;
 
         this.webUrl = _.trim(
             this.httpProxy.url + url.parse(CONF.web.url).pathname, "/");
+
+        LOG.info("Http proxy is started");
+
         return this.webUrl;
     },
 
@@ -243,7 +248,7 @@ var ProxySteps = {
 
         if (check) {
             expect(this.httpProxy.url,
-                   "HTTP proxy was not launched").to.exist;
+                "HTTP proxy was not launched").to.exist;
         };
 
         return this.httpProxy.url;
@@ -277,15 +282,20 @@ var ProxySteps = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
+        LOG.info("Stopping http proxy...");
+
         await this.httpProxy.stop();
 
         if (check) {
             expect(this.httpProxy.isRunning,
-                   "HTTP proxy wasn't stopped").be.false;
+                "HTTP proxy wasn't stopped").be.false;
         };
 
         this.webUrl = CONF.web.Url;
         this._isProxyStarted = false;
+
+        LOG.info("Http proxy is stopped");
+
         return true;
     },
 
@@ -329,6 +339,8 @@ var ProxySteps = {
         var port = U.defVal(opts.port, CONF.proxy.globalPort);
         var check = U.defVal(opts.check, true);
 
+        LOG.info("Starting global proxy...");
+
         this.globalProxy = this.globalProxy || new this.__GlobalProxy({
             useCache: useCache,
             timeout: timeout,
@@ -340,11 +352,14 @@ var ProxySteps = {
 
         if (check) {
             expect(this.globalProxy.isRunning,
-                   "Global proxy was not launched")
+                "Global proxy was not launched")
                 .to.be.true;
         };
 
         this._isGlobalProxyStarted = true;
+
+        LOG.info("Global proxy is started");
+
         return true;
     },
 
@@ -376,13 +391,18 @@ var ProxySteps = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
+        LOG.info("Stopping global proxy...");
+
         await this.globalProxy.stop();
 
         if (check) {
             expect(this.globalProxy.isRunning,
-                   "Global proxy wasn't stopped").be.false;
+                "Global proxy wasn't stopped").be.false;
         };
         this._isGlobalProxyStarted = false;
+
+        LOG.info("Global proxy is stopped");
+
         return true;
     },
 
@@ -412,6 +432,8 @@ var ProxySteps = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
+        LOG.info("Limiting proxy speed to", speed, "...");
+
         if (this.httpProxy) {
             this.httpProxy.setSpeed(speed);
         };
@@ -427,28 +449,31 @@ var ProxySteps = {
             if (this.httpProxy) {
                 if (speed.req !== undefined) {
                     expect(this.httpProxy.reqSpeed,
-                           "HTTP proxy requests speed is not limited")
+                        "HTTP proxy requests speed is not limited")
                         .be.equal(speed.req);
                 };
                 if (speed.res !== undefined) {
                     expect(this.httpProxy.resSpeed,
-                           "HTTP proxy responses speed is not limited")
+                        "HTTP proxy responses speed is not limited")
                         .be.equal(speed.res);
                 };
             };
             if (this.globalProxy) {
                 if (speed.req !== undefined) {
                     expect(this.globalProxy.reqSpeed,
-                           "Global proxy requests speed is not limited")
+                        "Global proxy requests speed is not limited")
                         .be.equal(speed.req);
                 };
                 if (speed.res !== undefined) {
                     expect(this.globalProxy.resSpeed,
-                           "Global proxy responses speed is not limited")
+                        "Global proxy responses speed is not limited")
                         .be.equal(speed.res);
                 };
             };
         };
+
+        LOG.info("Proxy speed is limited");
+
         return true;
     },
 
@@ -474,6 +499,8 @@ var ProxySteps = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
+        LOG.info("Unlimiting proxy speed...");
+
         if (this.httpProxy) {
             this.httpProxy.resetSpeed();
         };
@@ -484,21 +511,24 @@ var ProxySteps = {
         if (check) {
             if (this.httpProxy) {
                 expect(this.httpProxy.reqSpeed,
-                       "HTTP proxy requests speed still has limited value")
+                    "HTTP proxy requests speed still has limited value")
                     .be.null;
                 expect(this.httpProxy.resSpeed,
-                       "HTTP proxy responses speed still has limited value")
+                    "HTTP proxy responses speed still has limited value")
                     .be.null;
             };
             if (this.globalProxy) {
                 expect(this.globalProxy.reqSpeed,
-                       "Global proxy requests speed still has limited value")
+                    "Global proxy requests speed still has limited value")
                     .be.null;
                 expect(this.globalProxy.resSpeed,
-                       "Global proxy responses speed still has limited value")
+                    "Global proxy responses speed still has limited value")
                     .be.null;
             };
         };
+
+        LOG.info("Proxy speed is unlimited");
+
         return true;
     },
 
@@ -524,6 +554,8 @@ var ProxySteps = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
+        LOG.info("Starting to measure proxy responses...");
+
         if (this.httpProxy) {
             this.httpProxy.measureResponses();
         };
@@ -534,15 +566,18 @@ var ProxySteps = {
         if (check) {
             if (this.httpProxy) {
                 expect(this.httpProxy.getResponsesData(),
-                       "HTTP proxy responses measurement is not launched")
+                    "HTTP proxy responses measurement is not launched")
                     .to.exist;
             };
             if (this.globalProxy) {
                 expect(this.globalProxy.getResponsesData(),
-                       "Global proxy responses measurement is not launched")
+                    "Global proxy responses measurement is not launched")
                     .to.exist;
             };
         };
+
+        LOG.info("Proxy responses are measuring");
+
         return true;
     },
 
@@ -579,7 +614,7 @@ var ProxySteps = {
 
         if (check) {
             expect(_.isEmpty(data),
-                   "Responses data are absent").be.false;
+                "Responses data are absent").be.false;
         };
 
         return data;
@@ -607,6 +642,8 @@ var ProxySteps = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
+        LOG.info("Stopping to measure proxy responses...");
+
         if (this.httpProxy) {
             this.httpProxy.unmeasureResponses();
         };
@@ -617,15 +654,18 @@ var ProxySteps = {
         if (check) {
             if (this.httpProxy) {
                 expect(this.httpProxy.getResponsesData(),
-                       "HTTP proxy responses measurement is still running")
+                    "HTTP proxy responses measurement is still running")
                     .to.be.null;
             };
             if (this.globalProxy) {
                 expect(this.globalProxy.getResponsesData(),
-                       "Global proxy responses measurement is still running")
+                    "Global proxy responses measurement is still running")
                     .to.be.null;
             };
         };
+
+        LOG.info("Proxy responses are not measured");
+
         return true;
     },
 
@@ -643,8 +683,14 @@ var ProxySteps = {
          */
 
         this._checkProxy();
+
+        LOG.info("Enabling proxy cache...");
+
         if (this.httpProxy) this.httpProxy.useCache = true;
         if (this.globalProxy) this.globalProxy.useCache = true;
+
+        LOG.info("Proxy cache is enabled");
+
         return true;
     },
 
@@ -662,8 +708,14 @@ var ProxySteps = {
          */
 
         this._checkProxy();
+
+        LOG.info("Disabling proxy cache...");
+
         if (this.httpProxy) this.httpProxy.useCache = false;
         if (this.globalProxy) this.globalProxy.useCache = false;
+
+        LOG.info("Proxy cache is disabled");
+
         return true;
     },
     /**
@@ -728,7 +780,7 @@ module.exports = ProxySteps;
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2018-03-12T23:36:51+02:00
+		on 2018-03-23T22:08:27+02:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
