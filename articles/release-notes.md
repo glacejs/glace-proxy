@@ -1,3 +1,7 @@
+### v1.3.1
+
+- [Restore](https://github.com/glacejs/glace-proxy/commit/0d713af7b8b64d93c42f31be5ce09574a4d5e02c) web url after stop HTTP proxy.
+
 ### v1.3.0
 
 - [Added](https://github.com/glacejs/glace-proxy/commit/d99e368909b55978f2b00664bb010b9320e9c03c) project workflow commands.
