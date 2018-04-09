@@ -1,3 +1,8 @@
+### v1.3.2
+
+- [Changed](https://github.com/glacejs/glace-proxy/commit/b937f451382e979bd0c32d024f37784a7969c4c4) logging level for cache.
+- [Fixed](https://github.com/glacejs/glace-proxy/commit/e5b52d86e6cb16940dec0efb43d98e15f4c8aed0) bug that ctx can be null on mitm proxy error.
+
 ### v1.3.1
 
 - [Restore](https://github.com/glacejs/glace-proxy/commit/0d713af7b8b64d93c42f31be5ce09574a4d5e02c) web url after stop HTTP proxy.
