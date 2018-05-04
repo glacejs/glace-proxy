@@ -1,3 +1,7 @@
+### v1.3.3
+
+- [Added](https://github.com/glacejs/glace-proxy/commit/e75b9352fc089a3f70f990a8a3691c444696fc2b) [allure](https://docs.qameta.io/allure/) steps.
+
 ### v1.3.2
 
 - [Changed](https://github.com/glacejs/glace-proxy/commit/b937f451382e979bd0c32d024f37784a7969c4c4) logging level for cache.
