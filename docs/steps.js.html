@@ -120,6 +120,7 @@
  */
 
 var url = require("url");
+var util = require("util");
 
 var _ = require("lodash");
 var expect = require("chai").expect;
@@ -200,6 +201,7 @@ var ProxySteps = {
         var port = U.defVal(opts.port, CONF.proxy.port);
         var check = U.defVal(opts.check, true);
 
+        allure.step("Start http proxy");
         expect(webUrl, "Web URL for http proxy isn't specified").to.exist;
 
         LOG.info("Starting http proxy...");
@@ -222,6 +224,7 @@ var ProxySteps = {
             this.httpProxy.url + url.parse(CONF.web.url).pathname, "/");
 
         LOG.info("Http proxy is started");
+        allure.pass();
 
         return this.webUrl;
     },
@@ -246,10 +249,16 @@ var ProxySteps = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
+        allure.step("Get http proxy url");
+        LOG.info("Getting http proxy url...");
+
         if (check) {
             expect(this.httpProxy.url,
                 "HTTP proxy was not launched").to.exist;
         };
+
+        LOG.info("Http proxy url is got");
+        allure.pass();
 
         return this.httpProxy.url;
     },
@@ -282,6 +291,7 @@ var ProxySteps = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
+        allure.step("Stop http proxy");
         LOG.info("Stopping http proxy...");
 
         await this.httpProxy.stop();
@@ -295,6 +305,7 @@ var ProxySteps = {
         this._isProxyStarted = false;
 
         LOG.info("Http proxy is stopped");
+        allure.pass();
 
         return true;
     },
@@ -339,6 +350,7 @@ var ProxySteps = {
         var port = U.defVal(opts.port, CONF.proxy.globalPort);
         var check = U.defVal(opts.check, true);
 
+        allure.step("Start global proxy");
         LOG.info("Starting global proxy...");
 
         this.globalProxy = this.globalProxy || new this.__GlobalProxy({
@@ -359,6 +371,7 @@ var ProxySteps = {
         this._isGlobalProxyStarted = true;
 
         LOG.info("Global proxy is started");
+        allure.pass();
 
         return true;
     },
@@ -391,6 +404,7 @@ var ProxySteps = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
+        allure.step("Stop global proxy");
         LOG.info("Stopping global proxy...");
 
         await this.globalProxy.stop();
@@ -402,6 +416,7 @@ var ProxySteps = {
         this._isGlobalProxyStarted = false;
 
         LOG.info("Global proxy is stopped");
+        allure.pass();
 
         return true;
     },
@@ -432,7 +447,8 @@ var ProxySteps = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
-        LOG.info("Limiting proxy speed to", speed, "...");
+        allure.step(util.format("Limit proxy speed to", speed, "kb/s"));
+        LOG.info("Limiting proxy speed to", speed, "kb/s...");
 
         if (this.httpProxy) {
             this.httpProxy.setSpeed(speed);
@@ -473,6 +489,7 @@ var ProxySteps = {
         };
 
         LOG.info("Proxy speed is limited");
+        allure.pass();
 
         return true;
     },
@@ -499,6 +516,7 @@ var ProxySteps = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
+        allure.step("Unlimit proxy speed");
         LOG.info("Unlimiting proxy speed...");
 
         if (this.httpProxy) {
@@ -528,6 +546,7 @@ var ProxySteps = {
         };
 
         LOG.info("Proxy speed is unlimited");
+        allure.pass();
 
         return true;
     },
@@ -554,6 +573,7 @@ var ProxySteps = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
+        allure.step("Start to measure proxy responses");
         LOG.info("Starting to measure proxy responses...");
 
         if (this.httpProxy) {
@@ -577,6 +597,7 @@ var ProxySteps = {
         };
 
         LOG.info("Proxy responses are measuring");
+        allure.pass();
 
         return true;
     },
@@ -605,6 +626,9 @@ var ProxySteps = {
 
         var data = [];
 
+        allure.step("Get responses data");
+        LOG.info("Getting responses data...");
+
         if (this.httpProxy &amp;&amp; this.httpProxy.getResponsesData()) {
             data = data.concat(this.httpProxy.getResponsesData());
         };
@@ -616,6 +640,9 @@ var ProxySteps = {
             expect(_.isEmpty(data),
                 "Responses data are absent").be.false;
         };
+
+        LOG.info("Responses data is got");
+        allure.pass();
 
         return data;
     },
@@ -642,6 +669,7 @@ var ProxySteps = {
         opts = U.defVal(opts, {});
         var check = U.defVal(opts.check, true);
 
+        allure.step("Stop to measure proxy responses");
         LOG.info("Stopping to measure proxy responses...");
 
         if (this.httpProxy) {
@@ -665,6 +693,7 @@ var ProxySteps = {
         };
 
         LOG.info("Proxy responses are not measured");
+        allure.pass();
 
         return true;
     },
@@ -682,6 +711,7 @@ var ProxySteps = {
          * SS.enableCache();
          */
 
+        allure.step("Enable proxy cache");
         this._checkProxy();
 
         LOG.info("Enabling proxy cache...");
@@ -690,6 +720,7 @@ var ProxySteps = {
         if (this.globalProxy) this.globalProxy.useCache = true;
 
         LOG.info("Proxy cache is enabled");
+        allure.pass();
 
         return true;
     },
@@ -707,6 +738,7 @@ var ProxySteps = {
          * SS.disableCache();
          */
 
+        allure.step("Disable proxy cache");
         this._checkProxy();
 
         LOG.info("Disabling proxy cache...");
@@ -715,6 +747,7 @@ var ProxySteps = {
         if (this.globalProxy) this.globalProxy.useCache = false;
 
         LOG.info("Proxy cache is disabled");
+        allure.pass();
 
         return true;
     },
@@ -780,7 +813,7 @@ module.exports = ProxySteps;
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2018-04-09T19:12:32+03:00
+		on 2018-05-04T21:27:41+03:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
