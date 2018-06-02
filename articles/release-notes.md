@@ -1,3 +1,7 @@
+### v1.3.4
+
+- Updated dependencies.
+
 ### v1.3.3
 
 - [Added](https://github.com/glacejs/glace-proxy/commit/e75b9352fc089a3f70f990a8a3691c444696fc2b) [allure](https://docs.qameta.io/allure/) steps.
