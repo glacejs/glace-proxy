@@ -1,0 +1,77 @@
+{
+  "uid" : "701bd3e5ec18c6d6",
+  "name" : ".resetSpeed()",
+  "fullName" : "Session 2018-7-28 11:00:52..resetSpeed()",
+  "historyId" : "709ed49deb2158e4514b05b157930766",
+  "time" : {
+    "start" : 1532764853218,
+    "stop" : 1532764853219,
+    "duration" : 1
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "resets both speeds",
+      "time" : {
+        "start" : 1532764853218,
+        "stop" : 1532764853219,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-7-28 11:00:52"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-7-28 11:00:52"
+  }, {
+    "name" : "testMethod",
+    "value" : ".resetSpeed()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-7-28 11:00:52"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "701bd3e5ec18c6d6.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,122 @@
+{
+  "uid" : "b20d512dfe1189b8",
+  "name" : ".launchGlobalProxy()",
+  "fullName" : "Session 2018-7-28 11:00:52..launchGlobalProxy()",
+  "historyId" : "b91fdf908f32b2c7d0cb31a9ec3ff08b",
+  "time" : {
+    "start" : 1532764853241,
+    "stop" : 1532764853248,
+    "duration" : 7
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "skipped if global proxy already launched",
+      "time" : {
+        "start" : 1532764853241,
+        "stop" : 1532764853243,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "starts new global proxy instance",
+      "time" : {
+        "start" : 1532764853243,
+        "stop" : 1532764853244,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "starts existing global proxy instance",
+      "time" : {
+        "start" : 1532764853244,
+        "stop" : 1532764853245,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "restarts chrome browser",
+      "time" : {
+        "start" : 1532764853245,
+        "stop" : 1532764853247,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-7-28 11:00:52"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-7-28 11:00:52"
+  }, {
+    "name" : "testMethod",
+    "value" : ".launchGlobalProxy()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-7-28 11:00:52"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "b20d512dfe1189b8.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}

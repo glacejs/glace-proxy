@@ -1,0 +1,122 @@
+{
+  "uid" : "5bfb153ee62fd1c8",
+  "name" : "base proxy instance",
+  "fullName" : "Session 2018-7-28 11:00:52.base proxy instance",
+  "historyId" : "83d3bc906e44aafd0850bbb73f1f4f54",
+  "time" : {
+    "start" : 1532764853203,
+    "stop" : 1532764853212,
+    "duration" : 9
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "set both speed",
+      "time" : {
+        "start" : 1532764853207,
+        "stop" : 1532764853209,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "set req speed only",
+      "time" : {
+        "start" : 1532764853209,
+        "stop" : 1532764853210,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "set res speed only",
+      "time" : {
+        "start" : 1532764853210,
+        "stop" : 1532764853210,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "set res & res speed separately even speed option present",
+      "time" : {
+        "start" : 1532764853210,
+        "stop" : 1532764853211,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-7-28 11:00:52"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-7-28 11:00:52"
+  }, {
+    "name" : "testMethod",
+    "value" : "base proxy instance"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-7-28 11:00:52"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "5bfb153ee62fd1c8.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}

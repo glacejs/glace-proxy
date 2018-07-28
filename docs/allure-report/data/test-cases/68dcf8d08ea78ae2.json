@@ -1,0 +1,107 @@
+{
+  "uid" : "68dcf8d08ea78ae2",
+  "name" : "._isGlobalProxyLaunched()",
+  "fullName" : "Session 2018-7-28 11:00:52.._isGlobalProxyLaunched()",
+  "historyId" : "b36a1f04486540bbb4bd92549b0814e9",
+  "time" : {
+    "start" : 1532764853289,
+    "stop" : 1532764853291,
+    "duration" : 2
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "returns false if global proxy doesn't exit",
+      "time" : {
+        "start" : 1532764853289,
+        "stop" : 1532764853290,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "returns false if global proxy isn't running",
+      "time" : {
+        "start" : 1532764853290,
+        "stop" : 1532764853290,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "returns true if global proxy is running",
+      "time" : {
+        "start" : 1532764853290,
+        "stop" : 1532764853291,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-7-28 11:00:52"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-7-28 11:00:52"
+  }, {
+    "name" : "testMethod",
+    "value" : "._isGlobalProxyLaunched()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-7-28 11:00:52"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "68dcf8d08ea78ae2.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}

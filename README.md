@@ -157,7 +157,7 @@ As [GlaceJS](https://glacejs.github.io/glace-core/) framework plugin it will be 
 
 ### Test examples
 
-See [integration tests](https://github.com/glacejs/glace-js/blob/master/tests/integration/testProxy.js) in order to explore examples.
+See [integration tests](https://github.com/glacejs/glace-js/blob/master/tests/e2e/testProxy.js) in order to explore examples.
 
 ## Tests and quality
 
