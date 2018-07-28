@@ -1,0 +1,137 @@
+{
+  "uid" : "9aff33f016d25c7b",
+  "name" : ".__changeReqSpeed()",
+  "fullName" : "Session 2018-7-28 21:31:48..__changeReqSpeed()",
+  "historyId" : "292a016fc056203531af056f6db959d0",
+  "time" : {
+    "start" : 1532802718238,
+    "stop" : 1532802718246,
+    "duration" : 8
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "doesn't change request if no req speed",
+      "time" : {
+        "start" : 1532802718238,
+        "stop" : 1532802718240,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "stops request if speed is zero",
+      "time" : {
+        "start" : 1532802718240,
+        "stop" : 1532802718242,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "just emit origin req event if not data or end event",
+      "time" : {
+        "start" : 1532802718242,
+        "stop" : 1532802718243,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "promisify req event if data event",
+      "time" : {
+        "start" : 1532802718243,
+        "stop" : 1532802718244,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "finalize req event if end event",
+      "time" : {
+        "start" : 1532802718245,
+        "stop" : 1532802718246,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-7-28 21:31:48"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-7-28 21:31:48"
+  }, {
+    "name" : "testMethod",
+    "value" : ".__changeReqSpeed()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-7-28 21:31:48"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "9aff33f016d25c7b.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}

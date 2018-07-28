@@ -1,0 +1,122 @@
+{
+  "uid" : "10052fa9e0c1792f",
+  "name" : "Plugin lazy import",
+  "fullName" : "Session 2018-7-28 21:31:48.Plugin lazy import",
+  "historyId" : "f95811eab9b1cc8e5c43c09373b5b493",
+  "time" : {
+    "start" : 1532802718223,
+    "stop" : 1532802718225,
+    "duration" : 2
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "empty by default",
+      "time" : {
+        "start" : 1532802718223,
+        "stop" : 1532802718224,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "has config",
+      "time" : {
+        "start" : 1532802718224,
+        "stop" : 1532802718224,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "has plugin help",
+      "time" : {
+        "start" : 1532802718224,
+        "stop" : 1532802718224,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "has steps",
+      "time" : {
+        "start" : 1532802718225,
+        "stop" : 1532802718225,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-7-28 21:31:48"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-7-28 21:31:48"
+  }, {
+    "name" : "testMethod",
+    "value" : "Plugin lazy import"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-7-28 21:31:48"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "10052fa9e0c1792f.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}
