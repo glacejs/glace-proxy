@@ -18,6 +18,11 @@
     "test:e2e": "./tests/run ./tests/e2e --root-conftest ./tests/e2e.conftest.js --gen-steps-files ./tests/e2e.steps.yaml --gen-steps-uniq 2 --gen-limit-steps 10",
     "test:e2e-gen": "npm run test:e2e -- --gen-tests-only"
   },
+  "nyc": {
+    "exclude": [
+      "tests"
+    ]
+  },
   "pre-commit": [
     "lint",
     "test:commit"
