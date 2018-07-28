@@ -1,0 +1,58 @@
+{
+  "summary" : {
+    "reportName" : "Allure Report",
+    "testRuns" : [ ],
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 32,
+      "unknown" : 0,
+      "total" : 32
+    },
+    "time" : {
+      "start" : 1532764788439,
+      "stop" : 1532764788613,
+      "duration" : 174,
+      "minDuration" : 1,
+      "maxDuration" : 18,
+      "sumDuration" : 166
+    }
+  },
+  "environment" : [ ],
+  "suites" : {
+    "total" : 1,
+    "items" : [ {
+      "uid" : "dbd87cca6609906ce6afaf8d033ea3a2",
+      "name" : "Session 2018-7-28 10:59:47",
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 32,
+        "unknown" : 0,
+        "total" : 32
+      }
+    } ]
+  },
+  "history-trend" : [ {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 32,
+      "unknown" : 0,
+      "total" : 32
+    }
+  } ],
+  "behaviors" : {
+    "total" : 32,
+    "items" : [ ]
+  },
+  "executors" : [ ],
+  "categories" : {
+    "total" : 0,
+    "items" : [ ]
+  },
+  "launches" : [ ]
+}

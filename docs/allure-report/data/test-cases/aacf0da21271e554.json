@@ -1,0 +1,77 @@
+{
+  "uid" : "aacf0da21271e554",
+  "name" : ".restartGlobalProxy()",
+  "fullName" : "Session 2018-7-28 10:59:47..restartGlobalProxy()",
+  "historyId" : "ea670c07363a11ca2ff9e51d61a3d41c",
+  "time" : {
+    "start" : 1532764788487,
+    "stop" : 1532764788489,
+    "duration" : 2
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "restarts global proxy",
+      "time" : {
+        "start" : 1532764788487,
+        "stop" : 1532764788489,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-7-28 10:59:47"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-7-28 10:59:47"
+  }, {
+    "name" : "testMethod",
+    "value" : ".restartGlobalProxy()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-7-28 10:59:47"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "aacf0da21271e554.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}
