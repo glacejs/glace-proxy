@@ -1,0 +1,107 @@
+{
+  "uid" : "82d98b8dbde06013",
+  "name" : "._isHttpProxyLaunched()",
+  "fullName" : "Session 2018-7-28 14:11:46.._isHttpProxyLaunched()",
+  "historyId" : "a5c54ba169f700103d7b4fe100a15918",
+  "time" : {
+    "start" : 1532776307354,
+    "stop" : 1532776307357,
+    "duration" : 3
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "returns false if http proxy doesn't exit",
+      "time" : {
+        "start" : 1532776307355,
+        "stop" : 1532776307355,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "returns false if http proxy isn't running",
+      "time" : {
+        "start" : 1532776307355,
+        "stop" : 1532776307355,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "returns true if http proxy is running",
+      "time" : {
+        "start" : 1532776307356,
+        "stop" : 1532776307356,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-7-28 14:11:46"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-7-28 14:11:46"
+  }, {
+    "name" : "testMethod",
+    "value" : "._isHttpProxyLaunched()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-7-28 14:11:46"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "82d98b8dbde06013.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}

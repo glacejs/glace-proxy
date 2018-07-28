@@ -1,0 +1,77 @@
+{
+  "uid" : "ac83b836f139164a",
+  "name" : ".restartChrome()",
+  "fullName" : "Session 2018-7-28 14:11:46..restartChrome()",
+  "historyId" : "5a60f920123b6b8dcca1b467f7e2c4ce",
+  "time" : {
+    "start" : 1532776307339,
+    "stop" : 1532776307341,
+    "duration" : 2
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "restarts chrome",
+      "time" : {
+        "start" : 1532776307339,
+        "stop" : 1532776307340,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-7-28 14:11:46"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-7-28 14:11:46"
+  }, {
+    "name" : "testMethod",
+    "value" : ".restartChrome()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-7-28 14:11:46"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "ac83b836f139164a.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}

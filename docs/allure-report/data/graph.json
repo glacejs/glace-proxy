@@ -1,320 +1,320 @@
 [ {
-  "uid" : "a4bf66f0413e9979",
-  "name" : ".closeChrome()",
+  "uid" : "56e680b7146a7ba6",
+  "name" : ".resetProxySpeed()",
   "time" : {
-    "start" : 1532764853267,
-    "stop" : 1532764853269,
-    "duration" : 2
+    "start" : 1532776307344,
+    "stop" : 1532776307347,
+    "duration" : 3
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "5b2cce72bea8d8c",
-  "name" : ".restartHttpProxy()",
+  "uid" : "42962433f0418ba9",
+  "name" : ".__onError()",
   "time" : {
-    "start" : 1532764853239,
-    "stop" : 1532764853241,
-    "duration" : 2
+    "start" : 1532776307369,
+    "stop" : 1532776307381,
+    "duration" : 12
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "d9fa77bf5ba235a9",
-  "name" : ".__changeReqSpeed()",
-  "time" : {
-    "start" : 1532764853323,
-    "stop" : 1532764853329,
-    "duration" : 6
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "134eb69e842467f6",
+  "uid" : "cd8431e69d507bed",
   "name" : ".enableProxyCache()",
   "time" : {
-    "start" : 1532764853277,
-    "stop" : 1532764853280,
-    "duration" : 3
+    "start" : 1532776307347,
+    "stop" : 1532776307349,
+    "duration" : 2
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "c7c25159b8c1cec4",
-  "name" : ".limitProxySpeed()",
-  "time" : {
-    "start" : 1532764853336,
-    "stop" : 1532764853342,
-    "duration" : 6
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "a3a56acb2d2bca1f",
-  "name" : ".setSpeed()",
-  "time" : {
-    "start" : 1532764853212,
-    "stop" : 1532764853217,
-    "duration" : 5
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "c017d67700ed0196",
-  "name" : "plugin help contains option",
-  "time" : {
-    "start" : 1532764853314,
-    "stop" : 1532764853317,
-    "duration" : 3
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "5db722f6e9df5c21",
+  "uid" : "7eb54cde1f2147b0",
   "name" : ".setProxySpeed()",
   "time" : {
-    "start" : 1532764853271,
-    "stop" : 1532764853274,
+    "start" : 1532776307341,
+    "stop" : 1532776307344,
     "duration" : 3
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "53da2b2b32bc7deb",
-  "name" : ".stopHttpProxy()",
+  "uid" : "6abc3cd0bcfd7339",
+  "name" : ".limitProxySpeed()",
   "time" : {
-    "start" : 1532764853234,
-    "stop" : 1532764853238,
-    "duration" : 4
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "46a0fdb784eb3d74",
-  "name" : "._isHttpProxyLaunched()",
-  "time" : {
-    "start" : 1532764853284,
-    "stop" : 1532764853289,
-    "duration" : 5
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "ac0d1e76b9af10f3",
-  "name" : ".disableProxyCache()",
-  "time" : {
-    "start" : 1532764853280,
-    "stop" : 1532764853282,
-    "duration" : 2
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "78f6006c6f651673",
-  "name" : ".__balance",
-  "time" : {
-    "start" : 1532764853321,
-    "stop" : 1532764853323,
-    "duration" : 2
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "5bfb153ee62fd1c8",
-  "name" : "base proxy instance",
-  "time" : {
-    "start" : 1532764853203,
-    "stop" : 1532764853212,
-    "duration" : 9
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "68dcf8d08ea78ae2",
-  "name" : "._isGlobalProxyLaunched()",
-  "time" : {
-    "start" : 1532764853289,
-    "stop" : 1532764853291,
-    "duration" : 2
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "bc8b1453a8cb34dd",
-  "name" : ".unlimitProxySpeed()",
-  "time" : {
-    "start" : 1532764853343,
-    "stop" : 1532764853345,
-    "duration" : 2
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "cfa86aa9608e21ff",
-  "name" : "._checkProxy()",
-  "time" : {
-    "start" : 1532764853295,
-    "stop" : 1532764853297,
-    "duration" : 2
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "fc917a7e1471c281",
-  "name" : ".restartGlobalProxy()",
-  "time" : {
-    "start" : 1532764853252,
-    "stop" : 1532764853254,
-    "duration" : 2
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "b20d512dfe1189b8",
-  "name" : ".launchGlobalProxy()",
-  "time" : {
-    "start" : 1532764853241,
-    "stop" : 1532764853248,
+    "start" : 1532776307415,
+    "stop" : 1532776307422,
     "duration" : 7
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "29cdaae9d20d6153",
-  "name" : ".__onError()",
-  "time" : {
-    "start" : 1532764853299,
-    "stop" : 1532764853311,
-    "duration" : 12
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "701bd3e5ec18c6d6",
-  "name" : ".resetSpeed()",
-  "time" : {
-    "start" : 1532764853218,
-    "stop" : 1532764853219,
-    "duration" : 1
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "2e5d8aaa1a98df6c",
-  "name" : ".restartChrome()",
-  "time" : {
-    "start" : 1532764853269,
-    "stop" : 1532764853271,
-    "duration" : 2
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "700b4d30e970cd2f",
-  "name" : ".setProxiedUrl()",
-  "time" : {
-    "start" : 1532764853221,
-    "stop" : 1532764853227,
-    "duration" : 6
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "d93a65d835c2ce91",
-  "name" : ".__changeResSpeed()",
-  "time" : {
-    "start" : 1532764853330,
-    "stop" : 1532764853336,
-    "duration" : 6
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "52c573f2ce53517f",
+  "uid" : "b813b4e4f8a18e40",
   "name" : "._isChromeLaunched()",
   "time" : {
-    "start" : 1532764853291,
-    "stop" : 1532764853294,
-    "duration" : 3
+    "start" : 1532776307360,
+    "stop" : 1532776307364,
+    "duration" : 4
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "9896c5093a4f97c7",
-  "name" : "config",
+  "uid" : "ca559e7e71be0c72",
+  "name" : ".setSpeed()",
   "time" : {
-    "start" : 1532764853297,
-    "stop" : 1532764853299,
-    "duration" : 2
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "6edc9100ce97efb8",
-  "name" : ".launchHttpProxy()",
-  "time" : {
-    "start" : 1532764853228,
-    "stop" : 1532764853234,
+    "start" : 1532776307263,
+    "stop" : 1532776307269,
     "duration" : 6
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "3d54c6d29ee5f4a3",
-  "name" : ".launchChrome()",
+  "uid" : "4562afbbb7aa338b",
+  "name" : ".launchGlobalProxy()",
   "time" : {
-    "start" : 1532764853254,
-    "stop" : 1532764853266,
+    "start" : 1532776307305,
+    "stop" : 1532776307311,
+    "duration" : 6
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c6d4fc73a2e21f6f",
+  "name" : ".__changeReqSpeed()",
+  "time" : {
+    "start" : 1532776307399,
+    "stop" : 1532776307407,
+    "duration" : 8
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1068bd666761ff67",
+  "name" : ".setProxiedUrl()",
+  "time" : {
+    "start" : 1532776307273,
+    "stop" : 1532776307285,
     "duration" : 12
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "9ce4bf670c147ed",
-  "name" : "Plugin lazy import",
+  "uid" : "68ab7eaf564f6eef",
+  "name" : ".stopHttpProxy()",
   "time" : {
-    "start" : 1532764853312,
-    "stop" : 1532764853313,
-    "duration" : 1
+    "start" : 1532776307296,
+    "stop" : 1532776307302,
+    "duration" : 6
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "83ade1fef7f502b6",
-  "name" : ".stopGlobalProxy()",
+  "uid" : "89a1be1c01c066b7",
+  "name" : ".launchChrome()",
   "time" : {
-    "start" : 1532764853248,
-    "stop" : 1532764853252,
-    "duration" : 4
+    "start" : 1532776307321,
+    "stop" : 1532776307335,
+    "duration" : 14
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "d33523e1636ec1d5",
-  "name" : ".clearProxyCache()",
+  "uid" : "dbbfee0b621ca6d2",
+  "name" : ".__changeResSpeed()",
   "time" : {
-    "start" : 1532764853282,
-    "stop" : 1532764853284,
+    "start" : 1532776307408,
+    "stop" : 1532776307414,
+    "duration" : 6
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3a35b467d92f9d8b",
+  "name" : ".restartGlobalProxy()",
+  "time" : {
+    "start" : 1532776307319,
+    "stop" : 1532776307321,
     "duration" : 2
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "462536b3b32cf55a",
-  "name" : ".resetProxySpeed()",
+  "uid" : "e6f2b377548f7624",
+  "name" : "base proxy instance",
   "time" : {
-    "start" : 1532764853274,
-    "stop" : 1532764853277,
+    "start" : 1532776307249,
+    "stop" : 1532776307262,
+    "duration" : 13
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3e9fd70b08f68301",
+  "name" : "._checkProxy()",
+  "time" : {
+    "start" : 1532776307364,
+    "stop" : 1532776307367,
     "duration" : 3
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "5685755740ff3347",
+  "uid" : "2ca18089047cec71",
+  "name" : "config",
+  "time" : {
+    "start" : 1532776307367,
+    "stop" : 1532776307369,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1154ca7eddc7af8b",
+  "name" : ".restartHttpProxy()",
+  "time" : {
+    "start" : 1532776307302,
+    "stop" : 1532776307305,
+    "duration" : 3
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "30d2650e327266b5",
+  "name" : ".unlimitProxySpeed()",
+  "time" : {
+    "start" : 1532776307422,
+    "stop" : 1532776307425,
+    "duration" : 3
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a104644927293770",
+  "name" : ".launchHttpProxy()",
+  "time" : {
+    "start" : 1532776307285,
+    "stop" : 1532776307295,
+    "duration" : 10
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2db90c4d428f1d22",
+  "name" : "._isGlobalProxyLaunched()",
+  "time" : {
+    "start" : 1532776307357,
+    "stop" : 1532776307360,
+    "duration" : 3
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "417f009c428080e5",
   "name" : ".__promisify()",
   "time" : {
-    "start" : 1532764853317,
-    "stop" : 1532764853321,
-    "duration" : 4
+    "start" : 1532776307387,
+    "stop" : 1532776307392,
+    "duration" : 5
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b50c5f3eb636180d",
+  "name" : "Plugin lazy import",
+  "time" : {
+    "start" : 1532776307382,
+    "stop" : 1532776307384,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ac83b836f139164a",
+  "name" : ".restartChrome()",
+  "time" : {
+    "start" : 1532776307339,
+    "stop" : 1532776307341,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a7e929b58fd15e96",
+  "name" : ".resetSpeed()",
+  "time" : {
+    "start" : 1532776307269,
+    "stop" : 1532776307271,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "dc37bafce2b0813d",
+  "name" : ".__balance",
+  "time" : {
+    "start" : 1532776307392,
+    "stop" : 1532776307399,
+    "duration" : 7
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c1a129eda4682d07",
+  "name" : ".disableProxyCache()",
+  "time" : {
+    "start" : 1532776307350,
+    "stop" : 1532776307352,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b096939cd481f1a9",
+  "name" : ".closeChrome()",
+  "time" : {
+    "start" : 1532776307335,
+    "stop" : 1532776307338,
+    "duration" : 3
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "82d98b8dbde06013",
+  "name" : "._isHttpProxyLaunched()",
+  "time" : {
+    "start" : 1532776307354,
+    "stop" : 1532776307357,
+    "duration" : 3
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "172aa1d3cb7ee50b",
+  "name" : "plugin help contains option",
+  "time" : {
+    "start" : 1532776307384,
+    "stop" : 1532776307386,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "584664acce3fff5c",
+  "name" : ".clearProxyCache()",
+  "time" : {
+    "start" : 1532776307352,
+    "stop" : 1532776307354,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8fc172f439823139",
+  "name" : ".stopGlobalProxy()",
+  "time" : {
+    "start" : 1532776307312,
+    "stop" : 1532776307318,
+    "duration" : 6
   },
   "status" : "passed",
   "severity" : "normal"
