@@ -158,3 +158,8 @@ As [GlaceJS](https://glacejs.github.io/glace-core/) framework plugin it will be 
 ### Test examples
 
 See [integration tests](https://github.com/glacejs/glace-js/blob/master/tests/integration/testProxy.js) in order to explore examples.
+
+## Tests and quality
+
+- Project tests report is <a href="allure-report/index.html" target="_blank">here</a>
+- Code coverage report is <a href="tests-cover/lcov-report/index.html" target="_blank">here</a>
