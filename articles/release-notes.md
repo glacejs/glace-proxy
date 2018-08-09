@@ -1,3 +1,7 @@
+### v1.3.5
+
+- [Choose](https://github.com/glacejs/glace-proxy/commit/7357f863db63f0f9320af5ea0d7ed6d2e348ea4b) global proxy port randomly by default.
+
 ### v1.3.4
 
 - Updated dependencies.
