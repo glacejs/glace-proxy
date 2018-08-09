@@ -1,0 +1,122 @@
+{
+  "uid" : "1abfab90ddd8f8d1",
+  "name" : ".stopHttpProxy()",
+  "fullName" : "Session 2018-8-9 20:53:53..stopHttpProxy()",
+  "historyId" : "35af824fae55e28fe0f70bf3fedeabdb",
+  "time" : {
+    "start" : 1533837238112,
+    "stop" : 1533837238118,
+    "duration" : 6
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "stops http proxy",
+      "time" : {
+        "start" : 1533837238113,
+        "stop" : 1533837238114,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "stops http proxy with chrome restart",
+      "time" : {
+        "start" : 1533837238114,
+        "stop" : 1533837238116,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "stops http proxy without chrome restart if flag is set",
+      "time" : {
+        "start" : 1533837238116,
+        "stop" : 1533837238117,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "is skipped if http proxy isn't launched",
+      "time" : {
+        "start" : 1533837238117,
+        "stop" : 1533837238118,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-8-9 20:53:53"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-8-9 20:53:53"
+  }, {
+    "name" : "testMethod",
+    "value" : ".stopHttpProxy()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-8-9 20:53:53"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "1abfab90ddd8f8d1.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}

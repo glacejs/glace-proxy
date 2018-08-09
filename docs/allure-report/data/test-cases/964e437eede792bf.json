@@ -1,0 +1,107 @@
+{
+  "uid" : "964e437eede792bf",
+  "name" : ".__promisify()",
+  "fullName" : "Session 2018-8-9 20:53:53..__promisify()",
+  "historyId" : "d1e46085c048a415903b81d656f41049",
+  "time" : {
+    "start" : 1533837238207,
+    "stop" : 1533837238212,
+    "duration" : 5
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "returns the same promise if no chunk",
+      "time" : {
+        "start" : 1533837238208,
+        "stop" : 1533837238208,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "returns the same promise if no chunk length",
+      "time" : {
+        "start" : 1533837238208,
+        "stop" : 1533837238209,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "involve callback if chunk has length",
+      "time" : {
+        "start" : 1533837238209,
+        "stop" : 1533837238211,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-8-9 20:53:53"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-8-9 20:53:53"
+  }, {
+    "name" : "testMethod",
+    "value" : ".__promisify()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-8-9 20:53:53"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "964e437eede792bf.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}

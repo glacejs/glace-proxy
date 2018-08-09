@@ -1,0 +1,107 @@
+{
+  "uid" : "787e9abbfc40fd94",
+  "name" : ".unlimitProxySpeed()",
+  "fullName" : "Session 2018-8-9 20:53:53..unlimitProxySpeed()",
+  "historyId" : "f64c9386900a157261a6d165510bc06e",
+  "time" : {
+    "start" : 1533837238265,
+    "stop" : 1533837238284,
+    "duration" : 19
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "unlimits both speeds",
+      "time" : {
+        "start" : 1533837238282,
+        "stop" : 1533837238283,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Limit proxy speed to 5 kb/s",
+        "time" : {
+          "start" : 1533837238282,
+          "stop" : 1533837238283,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Unlimit proxy speed",
+        "time" : {
+          "start" : 1533837238283,
+          "stop" : 1533837238283,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-8-9 20:53:53"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-8-9 20:53:53"
+  }, {
+    "name" : "testMethod",
+    "value" : ".unlimitProxySpeed()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-8-9 20:53:53"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "787e9abbfc40fd94.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}
