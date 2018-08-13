@@ -1,0 +1,137 @@
+{
+  "uid" : "77ca1fe775181a9c",
+  "name" : ".launchHttpProxy()",
+  "fullName" : "Session 2018-8-13 22:58:42..launchHttpProxy()",
+  "historyId" : "91e984b81644d2d2dfb4b1d5b0525c3b",
+  "time" : {
+    "start" : 1534190327532,
+    "stop" : 1534190327540,
+    "duration" : 8
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "skipped if http proxy already launched",
+      "time" : {
+        "start" : 1534190327532,
+        "stop" : 1534190327534,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "skipped if proxied url isn't defined",
+      "time" : {
+        "start" : 1534190327535,
+        "stop" : 1534190327536,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "starts new http proxy instance",
+      "time" : {
+        "start" : 1534190327536,
+        "stop" : 1534190327537,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "starts existing http proxy instance",
+      "time" : {
+        "start" : 1534190327537,
+        "stop" : 1534190327538,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "restarts chrome browser",
+      "time" : {
+        "start" : 1534190327539,
+        "stop" : 1534190327540,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-8-13 22:58:42"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-8-13 22:58:42"
+  }, {
+    "name" : "testMethod",
+    "value" : ".launchHttpProxy()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-8-13 22:58:42"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "77ca1fe775181a9c.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}
