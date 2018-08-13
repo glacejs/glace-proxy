@@ -1,3 +1,7 @@
+### v1.3.6
+
+- [Started](https://github.com/glacejs/glace-proxy/commit/23cd707e11ab8791e187cab9bed4e5a01855b840) to support slaves mechanism.
+
 ### v1.3.5
 
 - [Choose](https://github.com/glacejs/glace-proxy/commit/7357f863db63f0f9320af5ea0d7ed6d2e348ea4b) global proxy port randomly by default.
