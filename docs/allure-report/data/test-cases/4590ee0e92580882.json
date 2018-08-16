@@ -1,0 +1,92 @@
+{
+  "uid" : "4590ee0e92580882",
+  "name" : ".resetProxySpeed()",
+  "fullName" : "Session 2018-8-16 21:11:19..resetProxySpeed()",
+  "historyId" : "9cd898eb744d50f9dc400107536d0d4e",
+  "time" : {
+    "start" : 1534443082898,
+    "stop" : 1534443082901,
+    "duration" : 3
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "skipped if not proxy is launched",
+      "time" : {
+        "start" : 1534443082898,
+        "stop" : 1534443082900,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "resets proxy speed",
+      "time" : {
+        "start" : 1534443082900,
+        "stop" : 1534443082901,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-8-16 21:11:19"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-8-16 21:11:19"
+  }, {
+    "name" : "testMethod",
+    "value" : ".resetProxySpeed()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-8-16 21:11:19"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "4590ee0e92580882.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}

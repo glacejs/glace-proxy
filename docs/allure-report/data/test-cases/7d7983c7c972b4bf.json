@@ -1,0 +1,107 @@
+{
+  "uid" : "7d7983c7c972b4bf",
+  "name" : ".__onError()",
+  "fullName" : "Session 2018-8-16 21:11:19..__onError()",
+  "historyId" : "50165b96189090b16a9e9029d1c30a78",
+  "time" : {
+    "start" : 1534443082924,
+    "stop" : 1534443082940,
+    "duration" : 16
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "sends reconnect if there are attemptions and socket",
+      "time" : {
+        "start" : 1534443082925,
+        "stop" : 1534443082937,
+        "duration" : 12
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "logs error if there is no reconnect attemptions",
+      "time" : {
+        "start" : 1534443082937,
+        "stop" : 1534443082939,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "logs error if socket is destroyed",
+      "time" : {
+        "start" : 1534443082939,
+        "stop" : 1534443082940,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-8-16 21:11:19"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-8-16 21:11:19"
+  }, {
+    "name" : "testMethod",
+    "value" : ".__onError()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-8-16 21:11:19"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "7d7983c7c972b4bf.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}

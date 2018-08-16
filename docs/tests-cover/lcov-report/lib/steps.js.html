@@ -1381,7 +1381,7 @@
  * Steps to manage proxy.
  *
  * These methods are mixed with glacejs [Steps](https://glacejs.github.io/glace-core/Steps.html)
- * class and available via its instance [SS](https://glacejs.github.io/glace-core/global.html#SS)
+ * class and available via its instance [$](https://glacejs.github.io/glace-core/global.html#$)
  * in tests.
  *
  * @mixin ProxySteps
@@ -1419,7 +1419,7 @@ var ProxySteps = {
          * @arg {object} [opts.HttpProxy] - HTTP proxy class.
          * @example
          *
-         * SS.registerProxy({ GlobalProxy: MyGlobalProxy, HttpProxy: MyHttpProxy });
+         * $.registerProxy({ GlobalProxy: MyGlobalProxy, HttpProxy: MyHttpProxy });
          */
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        opts = U.defVal(opts, {});</span>
@@ -1454,9 +1454,9 @@ var ProxySteps = {
          * @throws {AssertionError} If proxy was not launched.
          * @example
          *
-         * var proxiedUrl = await SS.startHttpProxy();
-         * var proxiedUrl = await SS.startHttpProxy({ webUrl: "http://example.com", });
-         * var proxiedUrl = await SS.startHttpProxy({ webUrl: "http://example.com", port: 8080 });
+         * var proxiedUrl = await $.startHttpProxy();
+         * var proxiedUrl = await $.startHttpProxy({ webUrl: "http://example.com", });
+         * var proxiedUrl = await $.startHttpProxy({ webUrl: "http://example.com", port: 8080 });
          */
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (this._isProxyStarted) {</span>
@@ -1514,7 +1514,7 @@ var ProxySteps = {
          * @throws {AssertionError} If proxy URL isn't defined.
          * @example
          *
-         * var proxiedUrl = SS.getProxiedUrl();
+         * var proxiedUrl = $.getProxiedUrl();
          */
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        opts = U.defVal(opts, {});</span>
@@ -1551,7 +1551,7 @@ var ProxySteps = {
          * @throws {AssertionError} If proxy wasn't stopped.
          * @example
          *
-         * await SS.stopHttpProxy();
+         * await $.stopHttpProxy();
          */
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (!this._isProxyStarted) {</span>
@@ -1605,8 +1605,8 @@ var ProxySteps = {
          * @throws {AssertionError} If global proxy was not launched.
          * @example
          *
-         * await SS.startGlobalProxy();
-         * await SS.startGlobalProxy({ timeout: 30000 });
+         * await $.startGlobalProxy();
+         * await $.startGlobalProxy({ timeout: 30000 });
          */
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (this._isGlobalProxyStarted) {</span>
@@ -1666,7 +1666,7 @@ var ProxySteps = {
          * @throws {AssertionError} If global proxy wasn't stopped.
          * @example
          *
-         * await SS.stopGlobalProxy();
+         * await $.stopGlobalProxy();
          */
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (!this._isGlobalProxyStarted) {</span>
@@ -1711,8 +1711,8 @@ var ProxySteps = {
          * @throws {AssertionError} If proxy speed is not limited.
          * @example
          *
-         * SS.limitProxySpeed(512);
-         * SS.limitProxySpeed({ res: 512 });
+         * $.limitProxySpeed(512);
+         * $.limitProxySpeed({ res: 512 });
          */
 &nbsp;
         this._checkProxy();
@@ -1781,7 +1781,7 @@ var ProxySteps = {
          * @throws {AssertionError} If proxy speed is still limited.
          * @example
          *
-         * SS.unlimitProxySpeed();
+         * $.unlimitProxySpeed();
          */
 &nbsp;
         this._checkProxy();
@@ -1838,7 +1838,7 @@ var ProxySteps = {
          * @throws {AssertionError} If responses measurement is not launched.
          * @example
          *
-         * SS.measureResponses();
+         * $.measureResponses();
          */
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        this._checkProxy();</span>
@@ -1889,7 +1889,7 @@ var ProxySteps = {
          * @return {object[]} List of captured response data.
          * @example
          *
-         * var responses = SS.getResponsesData();
+         * var responses = $.getResponsesData();
          */
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        this._checkProxy();</span>
@@ -1934,7 +1934,7 @@ var ProxySteps = {
          * @throws {AssertionError} If responses measurement is still running.
          * @example
          *
-         * SS.unmeasureResponses();
+         * $.unmeasureResponses();
          */
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        this._checkProxy();</span>
@@ -1981,7 +1981,7 @@ var ProxySteps = {
          * @return {boolean} `true` if step is passed.
          * @example
          *
-         * SS.enableCache();
+         * $.enableCache();
          */
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        allure.step("Enable proxy cache");</span>
@@ -2008,7 +2008,7 @@ var ProxySteps = {
          * @return {boolean} `true` if step is passed.
          * @example
          *
-         * SS.disableCache();
+         * $.disableCache();
          */
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        allure.step("Disable proxy cache");</span>
@@ -2047,7 +2047,7 @@ module.exports = ProxySteps;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Aug 13 2018 22:58:49 GMT+0300 (EEST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Aug 16 2018 21:11:23 GMT+0300 (EEST)
 </div>
 </div>
 <script src="../prettify.js"></script>

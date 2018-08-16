@@ -11,20 +11,20 @@
       "total" : 32
     },
     "time" : {
-      "start" : 1534190327505,
-      "stop" : 1534190327741,
-      "duration" : 236,
+      "start" : 1534443082830,
+      "stop" : 1534443082981,
+      "duration" : 151,
       "minDuration" : 1,
-      "maxDuration" : 72,
-      "sumDuration" : 219
+      "maxDuration" : 16,
+      "sumDuration" : 128
     }
   },
   "environment" : [ ],
   "suites" : {
     "total" : 1,
     "items" : [ {
-      "uid" : "fe37dd2e69e08c8cb36c28b7f5bdb093",
-      "name" : "Session 2018-8-13 22:58:42",
+      "uid" : "4a71768a4a6e5d321730229c17fb30e5",
+      "name" : "Session 2018-8-16 21:11:19",
       "statistic" : {
         "failed" : 0,
         "broken" : 0,
