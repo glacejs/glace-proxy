@@ -1,3 +1,8 @@
+### v1.3.7
+
+- Updated `glace-core`.
+- Started to use `$` only.
+
 ### v1.3.6
 
 - [Started](https://github.com/glacejs/glace-proxy/commit/23cd707e11ab8791e187cab9bed4e5a01855b840) to support slaves mechanism.
