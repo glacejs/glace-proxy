@@ -1,3 +1,7 @@
+### v1.3.8
+
+- [Updated](https://github.com/glacejs/glace-proxy/commit/fe5574dcdf16b44e3ac47a88abf6bb39b1317ecd) log message format.
+
 ### v1.3.7
 
 - Updated `glace-core`.
