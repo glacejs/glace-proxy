@@ -1,0 +1,92 @@
+{
+  "uid" : "dadc70c7366ab7ad",
+  "name" : ".closeChrome()",
+  "fullName" : "Session 2018-11-13 22:25:14..closeChrome()",
+  "historyId" : "17549d8c76bae04bec05c5d0acc3d79f",
+  "time" : {
+    "start" : 1542140716558,
+    "stop" : 1542140716581,
+    "duration" : 23
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "skipped if chrome is closed already",
+      "time" : {
+        "start" : 1542140716559,
+        "stop" : 1542140716579,
+        "duration" : 20
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "closes chrome",
+      "time" : {
+        "start" : 1542140716579,
+        "stop" : 1542140716581,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-11-13 22:25:14"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-11-13 22:25:14"
+  }, {
+    "name" : "testMethod",
+    "value" : ".closeChrome()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-11-13 22:25:14"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "dadc70c7366ab7ad.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,107 @@
+{
+  "uid" : "75109868c1ef05fd",
+  "name" : "._isChromeLaunched()",
+  "fullName" : "Session 2018-11-13 22:25:14.._isChromeLaunched()",
+  "historyId" : "79ac438b0c20fbe8795216bce15a6b3",
+  "time" : {
+    "start" : 1542140716617,
+    "stop" : 1542140716620,
+    "duration" : 3
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "returns false if chrome doesn't exit",
+      "time" : {
+        "start" : 1542140716618,
+        "stop" : 1542140716619,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "returns false if chrome isn't running",
+      "time" : {
+        "start" : 1542140716619,
+        "stop" : 1542140716619,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "returns true if chrome is running",
+      "time" : {
+        "start" : 1542140716619,
+        "stop" : 1542140716620,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-11-13 22:25:14"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-11-13 22:25:14"
+  }, {
+    "name" : "testMethod",
+    "value" : "._isChromeLaunched()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-11-13 22:25:14"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "75109868c1ef05fd.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}

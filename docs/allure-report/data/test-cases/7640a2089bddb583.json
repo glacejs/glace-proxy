@@ -1,0 +1,122 @@
+{
+  "uid" : "7640a2089bddb583",
+  "name" : ".setSpeed()",
+  "fullName" : "Session 2018-11-13 22:25:14..setSpeed()",
+  "historyId" : "d9c3d85a09f99ccb67aa6f585e80ebd3",
+  "time" : {
+    "start" : 1542140716493,
+    "stop" : 1542140716499,
+    "duration" : 6
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "for both speeds",
+      "time" : {
+        "start" : 1542140716495,
+        "stop" : 1542140716497,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "for req speed",
+      "time" : {
+        "start" : 1542140716497,
+        "stop" : 1542140716498,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "for res speed",
+      "time" : {
+        "start" : 1542140716498,
+        "stop" : 1542140716498,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "to zero for both speeds",
+      "time" : {
+        "start" : 1542140716498,
+        "stop" : 1542140716499,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2018-11-13 22:25:14"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2018-11-13 22:25:14"
+  }, {
+    "name" : "testMethod",
+    "value" : ".setSpeed()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2018-11-13 22:25:14"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "7640a2089bddb583.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}
