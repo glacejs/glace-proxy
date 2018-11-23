@@ -1,3 +1,7 @@
+### v1.3.9
+
+- [Used](https://github.com/glacejs/glace-proxy/commit/88ec57028bcafd6777b3921486d36b0b629f2570) features factory.
+
 ### v1.3.8
 
 - [Updated](https://github.com/glacejs/glace-proxy/commit/fe5574dcdf16b44e3ac47a88abf6bb39b1317ecd) log message format.
