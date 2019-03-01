@@ -1,3 +1,7 @@
+### v1.4.0
+
+- Updated dependencies to fresh versions.
+
 ### v1.3.9
 
 - [Used](https://github.com/glacejs/glace-proxy/commit/88ec57028bcafd6777b3921486d36b0b629f2570) features factory.
