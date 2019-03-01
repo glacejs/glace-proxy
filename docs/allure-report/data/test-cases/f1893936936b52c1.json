@@ -1,0 +1,70 @@
+{
+  "uid" : "f1893936936b52c1",
+  "name" : ".__balance",
+  "fullName" : "Session 2019-3-1 07:04:15..__balance",
+  "historyId" : "11904c254be524ec275908bbb2d7926b",
+  "time" : {
+    "start" : 1551416656688,
+    "stop" : 1551416656689,
+    "duration" : 1
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "balances size and time",
+      "time" : {
+        "start" : 1551416656688,
+        "stop" : 1551416656689,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2019-3-1 07:04:15"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2019-3-1 07:04:15"
+  }, {
+    "name" : "testMethod",
+    "value" : ".__balance"
+  }, {
+    "name" : "package",
+    "value" : "Session 2019-3-1 07:04:15"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f1893936936b52c1.json",
+  "parameterValues" : [ ]
+}

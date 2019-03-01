@@ -1,0 +1,85 @@
+{
+  "uid" : "21ed4c3e30e49cb8",
+  "name" : ".resetProxySpeed()",
+  "fullName" : "Session 2019-3-1 07:04:15..resetProxySpeed()",
+  "historyId" : "61ad910ca91e50d0881fcffd0a93c3d3",
+  "time" : {
+    "start" : 1551416656631,
+    "stop" : 1551416656636,
+    "duration" : 5
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "skipped if not proxy is launched",
+      "time" : {
+        "start" : 1551416656632,
+        "stop" : 1551416656633,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "resets proxy speed",
+      "time" : {
+        "start" : 1551416656633,
+        "stop" : 1551416656635,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2019-3-1 07:04:15"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2019-3-1 07:04:15"
+  }, {
+    "name" : "testMethod",
+    "value" : ".resetProxySpeed()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2019-3-1 07:04:15"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "21ed4c3e30e49cb8.json",
+  "parameterValues" : [ ]
+}

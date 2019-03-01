@@ -1,0 +1,70 @@
+{
+  "uid" : "7f9279eca08db2c6",
+  "name" : ".clearProxyCache()",
+  "fullName" : "Session 2019-3-1 07:04:15..clearProxyCache()",
+  "historyId" : "cd366425218e20e6d19108e0ad4ddd54",
+  "time" : {
+    "start" : 1551416656645,
+    "stop" : 1551416656648,
+    "duration" : 3
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "clears cache",
+      "time" : {
+        "start" : 1551416656646,
+        "stop" : 1551416656647,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2019-3-1 07:04:15"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2019-3-1 07:04:15"
+  }, {
+    "name" : "testMethod",
+    "value" : ".clearProxyCache()"
+  }, {
+    "name" : "package",
+    "value" : "Session 2019-3-1 07:04:15"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "7f9279eca08db2c6.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,15 @@
+{
+  "total" : 1,
+  "items" : [ {
+    "uid" : "6a798dfd15f44fcbbecd4da5de39f993",
+    "name" : "Session 2019-3-1 07:04:15",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 32,
+      "unknown" : 0,
+      "total" : 32
+    }
+  } ]
+}

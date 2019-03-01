@@ -1,0 +1,175 @@
+{
+  "uid" : "ebe20b1f0f65e800",
+  "name" : "plugin help contains option",
+  "fullName" : "Session 2019-3-1 07:04:15.plugin help contains option",
+  "historyId" : "929100c6a4ad69b17ba760e5f83c90e7",
+  "time" : {
+    "start" : 1551416656675,
+    "stop" : 1551416656682,
+    "duration" : 7
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "http-proxy",
+      "time" : {
+        "start" : 1551416656678,
+        "stop" : 1551416656679,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "http-proxy-port",
+      "time" : {
+        "start" : 1551416656679,
+        "stop" : 1551416656680,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "global-proxy",
+      "time" : {
+        "start" : 1551416656680,
+        "stop" : 1551416656680,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "global-proxy-port",
+      "time" : {
+        "start" : 1551416656680,
+        "stop" : 1551416656680,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "install-certificate",
+      "time" : {
+        "start" : 1551416656680,
+        "stop" : 1551416656681,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "cache",
+      "time" : {
+        "start" : 1551416656681,
+        "stop" : 1551416656681,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "existing-cache",
+      "time" : {
+        "start" : 1551416656681,
+        "stop" : 1551416656681,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "reconnect",
+      "time" : {
+        "start" : 1551416656681,
+        "stop" : 1551416656681,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Session 2019-3-1 07:04:15"
+  }, {
+    "name" : "testClass",
+    "value" : "Session 2019-3-1 07:04:15"
+  }, {
+    "name" : "testMethod",
+    "value" : "plugin help contains option"
+  }, {
+    "name" : "package",
+    "value" : "Session 2019-3-1 07:04:15"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "ebe20b1f0f65e800.json",
+  "parameterValues" : [ ]
+}

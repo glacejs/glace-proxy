@@ -1,5 +1,5 @@
 TN:
-SF:/home/user/vega/projects/glace/glace-proxy/lib/baseProxy.js
+SF:/Users/sergeichip/user/projects/glace/glace-proxy/lib/baseProxy.js
 FN:23,(anonymous_0)
 FN:45,(anonymous_1)
 FN:59,(anonymous_2)
@@ -71,7 +71,7 @@ BRF:10
 BRH:6
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-proxy/lib/commands.js
+SF:/Users/sergeichip/user/projects/glace/glace-proxy/lib/commands.js
 FN:34,(anonymous_0)
 FN:61,(anonymous_1)
 FN:79,(anonymous_2)
@@ -447,7 +447,7 @@ BRF:108
 BRH:82
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-proxy/lib/config.js
+SF:/Users/sergeichip/user/projects/glace/glace-proxy/lib/config.js
 FNF:0
 FNH:0
 DA:8,1
@@ -497,7 +497,7 @@ BRF:12
 BRH:10
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-proxy/lib/globalProxy.js
+SF:/Users/sergeichip/user/projects/glace/glace-proxy/lib/globalProxy.js
 FN:41,(anonymous_0)
 FN:45,(anonymous_1)
 FN:53,(anonymous_2)
@@ -642,7 +642,7 @@ BRF:34
 BRH:0
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-proxy/lib/httpProxy.js
+SF:/Users/sergeichip/user/projects/glace/glace-proxy/lib/httpProxy.js
 FN:29,(anonymous_0)
 FN:40,(anonymous_1)
 FN:49,(anonymous_2)
@@ -759,7 +759,7 @@ BRF:18
 BRH:5
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-proxy/lib/index.js
+SF:/Users/sergeichip/user/projects/glace/glace-proxy/lib/index.js
 FN:23,(anonymous_0)
 FN:32,(anonymous_1)
 FN:41,(anonymous_2)
@@ -823,7 +823,7 @@ BRF:18
 BRH:12
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-proxy/lib/pluginHelp.js
+SF:/Users/sergeichip/user/projects/glace/glace-proxy/lib/pluginHelp.js
 FN:7,(anonymous_0)
 FNF:1
 FNH:1
@@ -836,7 +836,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-proxy/lib/steps.js
+SF:/Users/sergeichip/user/projects/glace/glace-proxy/lib/steps.js
 FN:32,(anonymous_0)
 FN:52,(anonymous_1)
 FN:125,(anonymous_2)
@@ -1175,7 +1175,7 @@ BRF:98
 BRH:22
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-proxy/lib/fixtures/globalProxy.js
+SF:/Users/sergeichip/user/projects/glace/glace-proxy/lib/fixtures/globalProxy.js
 FN:5,(anonymous_0)
 FN:5,(anonymous_1)
 FN:9,(anonymous_2)
@@ -1201,7 +1201,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-proxy/lib/fixtures/httpProxy.js
+SF:/Users/sergeichip/user/projects/glace/glace-proxy/lib/fixtures/httpProxy.js
 FN:5,(anonymous_0)
 FN:5,(anonymous_1)
 FN:9,(anonymous_2)
@@ -1227,7 +1227,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-proxy/lib/fixtures/index.js
+SF:/Users/sergeichip/user/projects/glace/glace-proxy/lib/fixtures/index.js
 FNF:0
 FNH:0
 DA:9,1
@@ -1238,7 +1238,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-proxy/lib/middleware/cache.js
+SF:/Users/sergeichip/user/projects/glace/glace-proxy/lib/middleware/cache.js
 FN:28,(anonymous_0)
 FN:34,(anonymous_1)
 FN:62,(anonymous_2)
@@ -1367,7 +1367,7 @@ BRF:34
 BRH:7
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-proxy/lib/middleware/index.js
+SF:/Users/sergeichip/user/projects/glace/glace-proxy/lib/middleware/index.js
 FNF:0
 FNH:0
 DA:8,1
@@ -1377,7 +1377,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-proxy/lib/middleware/info.js
+SF:/Users/sergeichip/user/projects/glace/glace-proxy/lib/middleware/info.js
 FN:10,(anonymous_0)
 FN:29,(anonymous_1)
 FN:35,(anonymous_2)
@@ -1421,7 +1421,7 @@ BRF:4
 BRH:0
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-proxy/lib/middleware/reqBody.js
+SF:/Users/sergeichip/user/projects/glace/glace-proxy/lib/middleware/reqBody.js
 FN:8,(anonymous_0)
 FN:16,(anonymous_1)
 FNF:2
@@ -1456,7 +1456,7 @@ BRF:10
 BRH:0
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-proxy/lib/middleware/resHead.js
+SF:/Users/sergeichip/user/projects/glace/glace-proxy/lib/middleware/resHead.js
 FN:10,(anonymous_0)
 FN:19,(anonymous_1)
 FN:41,(anonymous_2)
@@ -1507,7 +1507,7 @@ BRF:16
 BRH:0
 end_of_record
 TN:
-SF:/home/user/vega/projects/glace/glace-proxy/lib/middleware/speed.js
+SF:/Users/sergeichip/user/projects/glace/glace-proxy/lib/middleware/speed.js
 FN:12,(anonymous_0)
 FN:24,(anonymous_1)
 FN:37,(anonymous_2)
